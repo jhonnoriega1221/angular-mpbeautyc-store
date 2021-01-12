@@ -1,0 +1,391 @@
+/*Foto e información*/
+.photo-info{
+	display:flex;
+	margin: 0px 60px 60px
+}
+
+/*Contenedor de la foto*/
+.imgbox{
+	margin-right: 20px;
+	width:50%;
+	text-align: right;
+}
+
+/*La imagen como tal*/
+.imgbox img{
+	width:100%;
+}
+
+/*Contenedor de la información*/
+.basic-info{ 
+	width: 50%;
+	text-align: left;
+}
+
+.basic-info h1{
+	border-bottom: 1px solid #969696;
+	padding-bottom: 6px;
+	margin-bottom: 8px;
+	font-weight: lighter;
+}
+
+.basic-info .old-price{
+	display: block;
+	margin-bottom: 0px;
+	font-size: 10px;
+	color: #969696;
+	text-decoration: line-through;
+}
+
+.basic-info .new-price{
+	display:inline;
+	margin-top:2px;
+	font-weight: bold;
+	font-size: 22px;
+}
+
+.basic-info .discount{
+    display: inline;
+    border-left: 1px solid #969696;
+    padding-left: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #2bff39;
+}
+
+/*Contenedor de estrellas*/
+.basic-info .stars{
+	margin-top:5px;
+	display: inline;
+	position:relative;
+	top:5px;
+}
+
+/*Estrellas*/
+.basic-info .stars i{
+	margin: 0 -3px;
+}
+
+/*Contador de opiniones*/
+.basic-info .opinion_counter{
+    border-left: 1px solid #969696;
+    padding: 0 0 0px 6px;
+    display: inline-block;
+}
+
+/*Costo de envio y stock*/
+.basic-info span{
+	display: block;
+	margin-bottom: 10px;
+}
+
+/*Selector de colores*/
+.product-color{
+	margin-bottom: 30px;
+}
+
+.color-picker div{
+	display: inline-block;
+}
+
+.color-picker input[type='radio']{
+	display: none;
+}
+
+.color-picker input[type='radio'] + label span {
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	margin: -1px 4px 0 0;
+	vertical-align: middle;
+	cursor: pointer;
+	border-radius: 50%;
+  }
+
+.color-picker input[type='radio'] + label span{
+	border: 2px solid #FFFFFF;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+}
+
+.color-picker input[type='radio']#pink + label span{
+	background-color: #ffaec8;
+}
+
+.color-picker input[type='radio']#brown + label span{
+	background-color: #b97a56;
+}
+
+.color-picker input[type='radio']#brown2 + label span{
+	background-color: #e4b296; 
+}
+
+.color-picker input[type='radio']:checked + label span{
+	background-image: url(../../../assets/check.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+/*Selector de cantidad*/
+
+.quantity-product{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.quantity-product span{
+	display: block;
+}
+
+.quantity-product input[type='number']{
+	font-weight: bold;
+    width: 70px;
+    font-size: 24px;
+	text-align: center;
+	border: 1px solid #eeeeee;
+}
+
+/*Botón de añadir al carrito*/
+.button1{
+	border-radius: 4px;
+    color: #fff;
+    background-color: #BD4C7B;
+    width: 200px;
+    height: 44px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+	box-shadow: 0px 1px 9px 0px #CD799C;
+	transition: 0.2s;
+	cursor: pointer;
+	display: block;
+}
+
+.button1:hover{
+    background-color: #C25B86;
+	box-shadow: 0px 4px 16px 0px #CD799C;
+	transition: 0.2s;
+}
+
+.basic-info .button1{
+	margin: auto;
+}
+
+/*Otros titulos*/
+h2{
+	border-bottom: 1px solid black;
+	padding-bottom: 4px;
+	font-size: 18px;
+}
+
+
+/*Preguntas y opinion*/
+.questionopinion-product{
+	display: flex;
+}
+
+/*Preguntas*/
+.question-product{
+	width:50%;
+	margin-right: 40px;
+}
+
+/*Cuadro de preguntas*/
+.questionopinion-product textarea{
+	width: 100%;
+	height: 30px;
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 12px;
+}
+
+.question-product .button1{
+	margin-left: auto;
+}
+
+#nologin{
+	text-align: center;
+	background-color: rgb(185, 185, 185);
+	padding: 25px;
+    border-radius: 10px;
+}
+
+#nologin a{
+	text-decoration: none;
+	font-weight: bold;
+	color: black;
+}
+
+/*Pregunta del usuario*/
+.question-product .user-question-answer .user-question{
+	margin-bottom: 3px;
+}
+
+/*Respuesta*/
+.question-product .user-question-answer .answer{
+	color:gray;
+	margin-top: 3px;
+	padding-left: 16px;
+}
+
+/*Opiniones*/
+.opinion-product{
+	width: 50%;
+}
+
+.opinion-stars{
+	display: flex;
+	margin-bottom: 30px;
+}
+
+.opinion-stars .user-opinion-counter{
+	width: 34%;
+	margin-right: 4%;
+	text-align: right;
+	display: block;
+}
+
+/*Contador de opiniones y calificación*/
+.user-opinion-counter .calification{
+	font-weight: lighter;
+	font-size: 46px;
+}
+
+.opinion-stars .stars i{
+	margin-right: -4px;
+}
+
+/*Contador de estrellas*/
+.users-stars-counter{
+	display: block;
+	width: 62%;
+}
+
+.star-counter-bar{
+	margin-bottom: -5px;
+}
+
+.star-counter-bar span{
+	margin-right: -5px;
+}
+
+.star-counter-bar span i{
+	position: relative;
+    right: 4px;
+    top: 4px;
+    font-size: 22px;
+}
+
+.star-counter-bar .bar-background{
+	display: inline-block;
+    width: 175px;
+    background-color: darkgray;
+    height: 6px;
+    margin-bottom: 2px;
+}
+
+.star-counter-bar .bar-inside{
+    background-color: black;
+    height: 6px;
+}
+
+.opinion-product .button1{
+	margin-left: auto;
+}
+
+.user-opinion-calification{
+	margin-bottom: 15px;
+}
+
+.user-opinion-stars{
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+.opinion-title{
+	margin-bottom:3px;
+	margin-top:0px;
+}
+
+.opinion-review{
+	margin-bottom:0px;
+	margin-top: 0px;
+	color:gray;
+}
+
+@media (min-width: 1290px){
+	.container{
+		margin: 0px auto;
+	}
+}
+
+@media (max-width: 885px){
+
+	/*Foto e información*/
+	.photo-info{
+		display:block;
+	}
+
+	/*Contenedor de la foto*/
+	.imgbox{
+		margin-right: 0;
+		width:100%;
+		text-align: center;
+	}
+
+	/*La imagen como tal*/
+	.imgbox img{
+		width:100%;
+	}
+
+	/*Contenedor de la información*/
+	.basic-info{ 
+		width: 100%;
+		text-align: left;
+	}
+
+	.questionopinion-product{
+		display: block;
+	}
+
+	.question-product{
+		width:100%;
+		margin-right: 0px;
+	}
+
+	.opinion-product{
+		width: 100%;
+	}
+}
+
+@media (max-width: 560px){
+
+	/*Foto e información*/
+	.photo-info{
+		margin: 0px 0px 60px
+	}
+
+	.container{
+		padding: 60px 50px;
+	}
+
+	.user-opinion-counter .stars{
+		font-size: 5px;
+	}
+
+	.button1{
+		width: 100%;
+	}
+
+	
+}
+
+@media (max-width: 473px){
+
+	.container{
+		padding: 60px 5px;
+	}
+
+	.star-counter-bar .bar-background{
+		width: 136px;
+	}
+}

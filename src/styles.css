@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    padding: 100px 30px 20px 30px;
+}
+
+@media (max-width: 560px){
+    .container{
+        padding: 48px 10px 20px 10px;
+    }
+}

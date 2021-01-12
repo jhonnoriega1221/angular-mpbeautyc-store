@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="searchBar">
+        <input type="text" class="search" placeholder="¿Que estás buscando?" [(ngModel)]="busqueda">
+        <button class="searchBtn" type="submit" (click)="buscarProductos(busqueda)"><i class="material-icons">search</i></button>
+    </div>
+    <div *ngIf="(productos.length != 0) else noSearch" class="searchContainer">
+        <aside class="titleAndFilter">
+            <div class="searchResultTitle">
+                <span class="searchTitle">resultados para</span>
+                <h1 *ngIf="query" class="searchName">{{query}}</h1>
+                <span class="searchQuantity">{{productos.length}} resultados</span>
+            </div>
+
+            <div class="filterSection">
+                <div class="categoryFilter">
+                    <label>Categoría</label>
+                    <select name="filtroCategoria">
+                        <option value="0" selected>Todas...</option>
+                        <option value="1">Cremas</option>
+                        <option value="2">Pomadas</option>
+                        <option value="3">Shampoo</option>
+                        <option value="4">Colonias</option>
+                    </select>
+                </div>
+                <div class="brandFilter">
+                    <label>Marca</label>
+                    <select name="filtroMarca">
+                        <option value="0" selected>Todas...</option>
+                        <option value="1">Avon</option>
+                        <option value="2">Chanel</option>
+                    </select>
+                </div>
+            </div>
+        </aside>    
+        <div class="resultSection">
+            
+            <!--Objeto de la lista de resultados-->
+            <a *ngFor="let producto of productos" class="resultSectionItem" (click)="goToProduct(producto._id)">
+
+                <div class="itemImageBox">
+                    <img src="{{producto.imgUrl}}" alt="{{producto.name}}">
+                </div>
+                <div class="titlePrice">
+                    <h2 class="itemTitle">{{producto.name}}</h2>
+                    <span class="itemPrice">${{producto.actualPrice}} COP</span>
+                </div>
+            </a>
+            <!--Fin objeto de la lista de resulta2-->
+
+        </div>
+    </div>
+
+    <ng-template #noSearch>
+        <p class="noSearch">Realiza una busqueda escribiendo algo en el cuadro de arriba</p>
+    </ng-template>
+</div>

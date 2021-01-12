@@ -1,0 +1,475 @@
+/*-------------SLIDER--------------*/
+
+#slider{
+    margin: 0 auto;
+    width: 1200px;
+    text-align: center;
+    padding-top:100px;
+}
+
+#slider input[type=radio]{
+    display: none;
+}
+
+#slider label{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#slides{
+    background: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+#overflow{
+    padding:0 100px;
+    width: 1000px;
+    overflow: hidden;
+}
+
+#slide1:checked ~ #slides .inner{
+    margin-left: 0;
+}
+
+#slide2:checked ~ #slides .inner{
+    margin-left: -100%;
+}
+
+#slide3:checked ~ #slides .inner{
+    margin-left: -200%;
+}
+
+#slide4:checked ~ #slides .inner{
+    margin-left: -300%;
+}
+
+#slides .inner{
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 400%;
+    line-height: 0;
+    height: 300px;
+}
+
+#slides .slide{
+    width: 25%;
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    color: #fff;
+}
+
+#slides .slide img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+#slides .slide_1 {
+    background: #97D2FB;
+}
+
+#slides .slide_2 {
+    background: #80FFE8;
+}
+
+#slides .slide_3 {
+    background: #83BCFF;
+}
+
+#slides .slide_4 {
+    background: #ECCBD9;
+}
+
+#controls{
+    margin: -280px 0 0 0px;
+    width: 100%;
+    height: 50px;
+    z-index:3;
+    position: relative;
+}
+
+#controls label{
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+}
+
+#controls label:hover{
+    opacity: 1;
+}
+
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1){
+    background: url(https://www.flaticon.com/svg/static/icons/svg/271/271228.svg) no-repeat;
+    float: right;
+    margin: 0 25px 0 0;
+    display: block;
+}
+
+#slide1:checked ~ #controls label:nth-last-child(1),
+#slide2:checked ~ #controls label:nth-last-child(4),
+#slide3:checked ~ #controls label:nth-last-child(3),
+#slide4:checked ~ #controls label:nth-last-child(2){
+    background: url(https://www.flaticon.com/svg/static/icons/svg/271/271220.svg) no-repeat;
+    float: left;
+    margin: 0 0 0 25px;
+    display: block;
+}
+
+#bullets{
+    margin: 250px 0 0;
+    text-align: center;
+}
+
+#bullets label{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #ccc;
+    margin: 0 10px;
+}
+
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4){
+    background: #444;
+}
+
+/*LAPTOP NORMAL*/
+
+@media screen and (max-width: 1200px){
+    #slider{
+        width: 900px;
+    }
+
+    #slides .slide{
+        height: 400px;
+    }
+
+    #overflow{
+        width: 700px;
+    }
+
+    #controls{
+        margin: -225px 0 0 0px;
+    }
+
+    #bullets{
+        margin: 190px 0 0;
+    }
+
+}
+
+/*TABLET*/
+@media screen and (max-width: 900px){
+    #slide1:checked ~ #controls label:nth-child(2),
+    #slide2:checked ~ #controls label:nth-child(3),
+    #slide3:checked ~ #controls label:nth-child(4),
+    #slide4:checked ~ #controls label:nth-child(1),
+    #slide1:checked ~ #controls label:nth-last-child(1),
+    #slide2:checked ~ #controls label:nth-last-child(4),
+    #slide3:checked ~ #controls label:nth-last-child(3),
+    #slide4:checked ~ #controls label:nth-last-child(2){
+        margin: 0;
+    }
+
+    #slider{
+        width: 100%;
+    }
+
+    #overflow{
+        padding:0 0px;
+        width:100%;
+    }
+
+    #slides .slide{
+        height: 400px;
+    }
+}
+
+/*MOVIL*/
+@media screen and (max-width: 425px){
+    #slides .slide{
+        height: 250px;
+    }
+
+    #slides .inner{
+        height: 200px;
+    }
+
+    #controls{
+        margin: -150px 0 0 0px;
+    }
+
+    #bullets{
+        margin: 110px 0 0;
+    }
+}
+
+/*-----PRODUCTS-----*/
+
+/* Móvil a partir de 560px */
+
+.filaproductos2{
+    background-color: #f2f2f2;
+}
+
+.titulowrapper{
+    display: flex;
+    padding-top: 20px; 
+}
+
+.titulowrapper p{
+    margin: 0px 5px 0px auto;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.titulowrapper a{
+    margin: 3px auto 0px 5px;
+    text-decoration: underline;
+    color:#969696;
+
+}
+
+.wrapper{
+    margin: 0px auto;
+    max-width: 935px;
+    display: flex;
+    overflow: scroll;
+    padding: 26px 0;
+    overflow: hidden;
+}
+
+.productcard{
+    margin: 0px 14px;
+    height: 274px;
+    min-width: 204px;
+    max-width: 204px;
+    border-radius: 4px;
+    box-shadow: 0 9px 20px 3px #ebebeb;
+    overflow:hidden;
+    user-select: none;
+    cursor:pointer;
+}
+
+.productcard .productlink{
+    text-decoration: none;
+    color: black;
+}
+
+.productcard .imgbox{
+    height: 100%;
+    box-sizing: border-box;
+    transition: 0.3s;
+    position:relative;
+}
+
+.productcard .imgbox .saleicon{
+    margin: 10px 0px 0px 150px;
+    position: absolute;
+    z-index: 1;
+}
+
+.productcard .imgbox .saleicon img{
+    width: 42px;
+}
+
+.productcard .imgbox img{
+    transition: 0.3s;
+}
+
+.productcard .imgbox img{
+    display:block;
+    width: 100%;
+    margin: auto 0;
+}
+
+.details{
+    position: relative;
+    bottom: 70px;
+    padding: 10px;
+    background-color: white;
+    transition: 0.2s;
+    min-height: 136px
+}
+
+.details .stars{
+    display: none;
+    padding: 0px;
+    left: 81px;
+    position: absolute;
+    bottom: 160px;
+    width: 122px;
+    text-shadow: 0px 0 3px black;
+    color: white;
+    font-size: 0px;
+}
+
+
+/*----Cuando se coloca el cursor sobre un producto----*/
+
+.productcard:hover .details{
+    bottom:156px;
+    box-shadow: 0 9px 20px 3px #363636;
+}
+
+.productcard:hover .imgbox img{
+    filter: brightness(50%);
+}
+
+.productcard:hover .stars{
+    display: inline;
+}
+/*----------------------------------------------------*/
+
+.details .price{
+    margin-top:5px;
+    display: flex;
+    font-weight: bold;
+}
+
+.details .price .sale{
+    color: #2bff39;
+
+}
+
+.details .price .preciochikito{
+    color: #969696;
+    font-size: 9px;
+    position: absolute;
+    text-decoration: line-through;
+    width: 184px;
+    text-align: right;
+    top: 5px;
+}
+
+.details .price .actualprice{
+    width:184px;
+    text-align: right;
+    position: relative;
+
+}
+
+.details .name {
+    font-size: 13px;
+    color: #969696;
+    min-height: 38px;
+}
+
+
+.coloreslista{
+    height: 47px;
+}
+
+.coloreslista span{
+    margin-top:0px;
+    display: block;
+    font-weight: bold
+}
+
+.colores{
+    display:flex;
+    margin:0;
+    padding:0;
+}
+
+.colores li{
+    list-style: none;
+    margin: 5px 8px 6px 0;
+    border-radius: 8px;
+    width: 16px;
+    height: 16px;
+}
+
+.colores li:nth-child(1){
+    background: blue;
+}
+
+.colores li:nth-child(2){
+    background: yellow;
+}
+
+.colores li:nth-child(3){
+    background: green;
+}
+
+.details .detailbutton{
+    width: 184px;
+    padding: 7px;
+    background: #eee;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 8px -5px #b0b0b0;
+    font-weight: bold;
+    border: none;
+    font-size: 14px
+}
+
+.detailbutton:hover{
+    background: #d6d6d6;
+    box-shadow: 0 4px 13px -3px #b0b0b0;
+}
+
+@media(max-width: 913px){
+    .wrapper{
+        overflow-x: scroll;
+    }
+}
+
+/*---ABOUT---------*/
+
+.aboutsection{
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+
+}
+
+.about{
+    text-align: center;
+    padding: 10px 60px;
+    width: 200px;
+}
+
+.aboutimg{
+    width: 150px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media (max-width: 635px){
+    .aboutsection{
+        display: block;
+    }
+
+    .about{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 900px){
+    .about{
+        padding: 30px 30px;
+    }
+}
+
+@media (max-width: 560px){
+    #slider{
+        padding-top:48px;
+    }
+}

@@ -1,0 +1,283 @@
+
+    <div id="slider">
+        <input type="radio" name="slider" id="slide1" checked>
+        <input type="radio" name="slider" id="slide2">
+        <input type="radio" name="slider" id="slide3">
+        <input type="radio" name="slider" id="slide4">
+        <div id="slides">
+            <div id="overflow">
+                <div class="inner">
+                    <div class="slide slide_1">
+                        <div class="slide-content">
+                            <img src="./img/banner1.jpg">
+                        </div>
+                    </div>
+                    <div class="slide slide_2">
+                        <div class="slide-content">
+                            <img src="./img/banner2.jpg">
+
+                        </div>
+                    </div>
+                    <div class="slide slide_3">
+                        <div class="slide-content">
+                            <img src="./img/banner3.jpg">
+                        </div>
+                    </div>
+                    <div class="slide slide_4">
+                        <div class="slide-content">
+                            <img src="./img/banner4.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="controls">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+        </div>
+        <div id="bullets">
+            <label for="slide1"></label>
+            <label for="slide2"></label>
+            <label for="slide3"></label>
+            <label for="slide4"></label>
+        </div>
+    </div>
+    <div class="filaproductos">
+        <div class="titulowrapper">
+            <p>Nuevos productos</p>
+            <a href="#">ver todo ></a>
+        </div>
+        <div class="wrapper">
+            <!--Item de producto-->
+            <div *ngFor="let producto of productosNuevos" class="productcard">
+                <a class="productlink" (click)="goToProduct(producto._id)">
+                    <div class="imgbox">
+                        <div *ngIf="producto.discount > 0" class="saleicon">
+                            <img src="../../../assets/discount.png">
+                        </div>
+                        <img src="{{producto.imgUrl}}">
+                    </div>
+                    <div class="details">
+                        <div class="stars">
+                            <i *ngIf="producto.rating >= 1; else middleStar1" class="material-icons">star</i>
+                            <ng-template #middleStar1>
+                                <i *ngIf="producto.rating >= 0.5; else noStar" class="material-icons">star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 2; else middleStar2" class="material-icons">star</i>
+                            <ng-template #middleStar2>
+                                <i *ngIf="producto.rating >= 1.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 3; else middleStar3" class="material-icons">star</i>
+                            <ng-template #middleStar3>
+                                <i *ngIf="producto.rating >= 2.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 4; else middleStar4" class="material-icons">star</i>
+                            <ng-template #middleStar4>
+                                <i *ngIf="producto.rating >= 3.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 5; else middleStar5" class="material-icons">star</i>
+                            <ng-template #middleStar5>
+                                <i *ngIf="producto.rating >= 4.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <ng-template class="material-icons" #noStar>
+                               <i class="material-icons">star_border</i>
+                            </ng-template>
+
+                        </div>
+                        <div class="price">
+                            <span *ngIf="producto.discount > 0" class="sale">-{{producto.discount}}%</span>
+                            <span *ngIf="producto.discount > 0" class="preciochikito">${{producto.originalPrice}} COP</span>
+                            <span class="actualprice">${{producto.actualPrice}} COP</span>
+                        </div>
+                        <div class="name">
+                            <span>{{producto.name}}</span>
+                        </div>
+
+                        <!-- No todos los productos tienen colores -->
+                        <div class="coloreslista">
+                            <span>Colores</span>
+                            <ul class="colores">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                        <button tabindex="-1" class="detailbutton">Ver más</button>
+                    </div>
+                </a>
+            </div>
+            <!--Fin item producto-->
+            
+        </div>
+    </div>
+    <div class="filaproductos2">
+        <div class="titulowrapper">
+            <p>En oferta</p>
+            <a href="#">ver todo ></a>
+        </div>
+        <div class="wrapper">
+            <div *ngFor="let producto of productosOferta" class="productcard">
+                <a class="productlink" href="#">
+                    <div class="imgbox">
+                        <div *ngIf="producto.discount > 0" class="saleicon">
+                            <img src="../../../assets/discount.png">
+                        </div>
+                        <img  src="{{producto.imgUrl}}">
+                    </div>
+                    <div class="details">
+                        <div class="stars">
+                            <i *ngIf="producto.rating >= 1; else middleStar1" class="material-icons">star</i>
+                            <ng-template #middleStar1>
+                                <i *ngIf="producto.rating >= 0.5; else noStar" class="material-icons">star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 2; else middleStar2" class="material-icons">star</i>
+                            <ng-template #middleStar2>
+                                <i *ngIf="producto.rating >= 1.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 3; else middleStar3" class="material-icons">star</i>
+                            <ng-template #middleStar3>
+                                <i *ngIf="producto.rating >= 2.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 4; else middleStar4" class="material-icons">star</i>
+                            <ng-template #middleStar4>
+                                <i *ngIf="producto.rating >= 3.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 5; else middleStar5" class="material-icons">star</i>
+                            <ng-template #middleStar5>
+                                <i *ngIf="producto.rating >= 4.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <ng-template class="material-icons" #noStar>
+                               <i class="material-icons">star_border</i>
+                            </ng-template>
+
+                        </div>
+                        <div class="price">
+                            <span *ngIf="producto.discount > 0" class="sale">-{{producto.discount}}%</span>
+                            <span *ngIf="producto.discount > 0" class="preciochikito">${{producto.originalPrice}} COP</span>
+                            <span class="actualprice">${{producto.actualPrice}} COP</span>
+                        </div>
+                        <div class="name">
+                            <span>{{producto.name}}</span>
+                        </div>
+
+                        <!-- No todos los productos tienen colores -->
+                        <div class="coloreslista">
+                            <span>Colores</span>
+                            <ul class="colores">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                        <button tabindex="-1" class="detailbutton">Ver más</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="filaproductos">
+        <div class="titulowrapper">
+            <p>Mas vendi2</p>
+            <a href="#">ver todo ></a>
+        </div>
+        <div class="wrapper">
+            <!--Item de producto-->
+            <div *ngFor="let producto of productosMasVendidos" class="productcard">
+                <a class="productlink" href="#">
+                    <div class="imgbox">
+                        <div class="productimage">
+                            <img src="{{producto.imgUrl}}">
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="stars">
+                            <i *ngIf="producto.rating >= 1; else middleStar1" class="material-icons">star</i>
+                            <ng-template #middleStar1>
+                                <i *ngIf="producto.rating >= 0.5; else noStar" class="material-icons">star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 2; else middleStar2" class="material-icons">star</i>
+                            <ng-template #middleStar2>
+                                <i *ngIf="producto.rating >= 1.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 3; else middleStar3" class="material-icons">star</i>
+                            <ng-template #middleStar3>
+                                <i *ngIf="producto.rating >= 2.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 4; else middleStar4" class="material-icons">star</i>
+                            <ng-template #middleStar4>
+                                <i *ngIf="producto.rating >= 3.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <i *ngIf="producto.rating >= 5; else middleStar5" class="material-icons">star</i>
+                            <ng-template #middleStar5>
+                                <i *ngIf="producto.rating >= 4.5; else noStar" class="material-icons" >star_half</i>
+                            </ng-template>
+
+                            <ng-template class="material-icons" #noStar>
+                               <i class="material-icons">star_border</i>
+                            </ng-template>
+
+                        </div>
+                        <div class="price">
+                            <span *ngIf="producto.discount > 0" class="sale">-{{producto.discount}}%</span>
+                            <span *ngIf="producto.discount > 0" class="preciochikito">${{producto.originalPrice}} COP</span>
+                            <span class="actualprice">${{producto.actualPrice}} COP</span>
+                        </div>
+                        <div class="name">
+                            <span>{{producto.name}}</span>
+                        </div>
+
+                        <!-- No todos los productos tienen colores -->
+                        <div class="coloreslista">
+                            <span>Colores</span>
+                            <ul class="colores">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                        <button tabindex="-1" class="detailbutton">Ver más</button>
+                    </div>
+                </a>
+            </div>
+            <!--Fin item producto-->
+        </div>
+    </div>
+    <div class="aboutsection">
+        <div class="about about1">
+            <img class="aboutimg" src="../../../assets/about1.png">
+            <p class="title">Buena atención al cliente</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="about about2">
+            <img class="aboutimg" src="../../../assets/about2.png">
+            <p class="title">Entrega de productos a tiempo</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="about about3">
+            <img class="aboutimg" src="../../../assets/about3.png">
+            <p class="title">Productos de buena calidad</p>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>

@@ -1,0 +1,52 @@
+<div class="topbar">
+    <div class="left_area">
+        <div class="logo_page">
+            <img class="logo" src="../../../assets/mplogo.jpg" alt="MP Beauty Cosmetics">
+        </div>
+    </div>
+
+    <div class="center_area">
+        <div class="search_box">
+            <input type="text" class="search" placeholder="¿Que estás buscando?" [(ngModel)]="query">
+            <button class="search_btn" type="submit" (click)="buscarProductos(query)"><i class="material-icons">search</i></button>
+            
+        </div>
+    </div>
+    
+    <div class="right_area">
+        <div class="top_username">
+            <p class="username">Hola, invitado <br> <a class="login_register" href=""> Ingrese o registrese</a></p>
+        </div>
+        <button class="topbutton"><i class="material-icons">person</i></button>
+        <button class="topbutton topbuttonpc"><i class="material-icons">shopping_cart</i></button>
+        <button class="topbutton topbuttonpc"><i class="material-icons">star</i></button>
+    </div>
+</div>
+
+<nav class="navbar">
+    <div class="linkspc">
+        <a class="navlinkpc" [routerLink]="['/']">Inicio</a>
+        <a class="navlinkpc" href="#">Categorias</a>
+        <a class="navlinkpc" href="#">Historial</a>
+        <a class="navlinkpc" href="#">Nuevo</a>
+        <a class="navlinkpc" href="#">En oferta</a>
+        <a class="navlinkpc" href="#">Contacto</a>
+        <a class="navlinkpc" href="#">Acerca de</a>
+    </div>
+    
+    <a class="linkmobile" [routerLink]="['/']"><i class="material-icons nav_icon">home</i>
+        <span class="nav_text">Inicio</span>
+    </a>
+    <a class="linkmobile" href=""><i class="material-icons nav_icon">category</i>
+        <span class="nav_text">Categorías</span>
+    </a>
+    <a class="linkmobile" [routerLink]="['/search']"><i class="material-icons nav_icon">search</i>
+        <span class="nav_text">Buscar</span>
+    </a>
+    <a class="linkmobile" href=""><i class="material-icons nav_icon">shopping_cart</i>
+        <span class="nav_text">Carro</span>
+    </a>
+    <a class="linkmobile" href=""><i class="material-icons nav_icon">star</i>
+        <span class="nav_text">Favoritos</span>
+    </a>
+</nav>

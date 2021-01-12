@@ -1,0 +1,193 @@
+/*------------------------------TOPBAR------------------------------------*/
+
+.topbar{
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+/*--------------------------<TOPBAR LEFT AREA<------------------------------------*/
+.topbar .left_area{
+    display: flex;
+    margin-left: 10%;
+}
+
+.topbar .logo_page .logo{
+    width: 200px;
+}
+
+/*--------------------------vTOPBAR CENTER AREAv-----------------------------------*/
+
+.topbar .center_area .search_box{
+    display: flex;
+}
+
+.topbar .center_area .search_box .search{
+    width: 100%;
+    border-radius: 5px 0px 0px 5px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    border-right: none;
+    outline:none;
+    transition: 0.2s;
+    padding-left: 8px;
+}
+
+.topbar .center_area .search_box .search:focus{
+    box-shadow: 0 0 10px #eeeeee;
+}
+
+.topbar .center_area .search_box .search_btn{
+    border: 1px solid #eeeeee;
+    padding-top: 3px;
+    background: #ffffff;
+    border-radius: 0 5px 5px 0;
+}
+
+/*------------------------------>TOPBAR RIGHT AREA>--------------------------------------*/
+.topbar .right_area{
+    display: flex;
+    margin-right: 10%;
+}
+
+.topbar .right_area .username{
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.topbar .right_area .login_register{
+    text-decoration: none;
+    color: #c2c2c2; 
+    font-weight: normal;
+}
+
+.topbar .right_area .top_username{
+    margin-top: 18px;
+}
+
+.topbar .topbutton{
+    border: 0px ;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin: 18px 7px;
+    background-attachment: #eeeeee;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.topbar .topbutton .material-icons{
+    padding: 4.5px;
+}
+
+/*--------------------NAVBAR PC------------------------*/
+
+.navbar{
+    display: flex;
+    font-size: 14px;
+    margin-top: 65px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    height: 35px;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    background-color: #ffffff;
+    overflow-x: auto;
+    z-index: 4;
+}
+
+.navbar .linkspc{
+    padding: 10px 0px;
+}
+
+.navbar .linkmobile{
+    display: none;
+}
+
+.navbar .navlinkpc{
+    display: inline;
+    padding: 8px 14px;
+    color: #000000;
+    text-decoration: none;
+}
+
+/*Media para el nombre del usuario*/
+@media (max-width: 850px){
+    .topbar .right_area .username{
+        display: none; 
+    }
+}
+
+/*Media para los bordes*/
+@media (max-width: 700px){
+    .topbar .left_area{
+        margin-left: 0;
+    }
+    
+    .topbar .right_area{
+        margin-right: 0;
+    }
+}
+
+/*-----------------MEDIA PARA LA NAVEGACION EN MÓVIL----------------------*/
+@media (max-width: 560px){
+
+    /*----------------------------TOPBAR MOBILE------------------------------*/
+    .topbar{
+        width: 100%;
+        height: 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    }
+    
+    .topbar .logo_page .logo{
+        width: 160px;
+    }
+
+
+
+    .center_area{
+        display: none;
+    }
+
+    .topbuttonpc{
+        display: none;
+    }
+
+    /*--------------------------NAVBAR MOBILE------------------------------------*/
+    .navbar{
+        bottom:0;
+        height: 48px;
+    }
+
+    .navbar .linkspc{
+        display: none;
+    }
+
+    .navbar .linkmobile{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        min-width: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        color: #444444;
+        text-decoration: none;
+        font-size: 11px;
+        transition: background-color 0.1s ease-in-out;
+    }   
+
+}

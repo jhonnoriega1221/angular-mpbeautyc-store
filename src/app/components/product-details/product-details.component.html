@@ -1,0 +1,253 @@
+<div *ngIf="producto" class="container">
+    <div class="photo-info">
+        <div class="imgbox">
+            <img  src="{{producto.imgUrl}}" alt="{{producto.name}}">
+        </div>
+        <div class="basic-info">
+
+            <!--Nombre del producto-->
+            <h1>{{producto.name}} </h1>
+            
+            <!--Precio del producto-->
+            <div class="prices">
+                <span *ngIf="producto.discount > 0" class="old-price">${{producto.originalPrice}} COP</span>
+                <p class="new-price">${{producto.actualPrice}} COP</p>
+                <span *ngIf="producto.discount > 0" class="discount">{{producto.discount}}%</span>
+            </div>
+
+            <!--Valoracion del producto-->
+            <div class="ratings">
+                <div class="stars">
+                    <i *ngIf="producto.rating >= 1; else middleStar1" class="material-icons">star</i>
+                    <ng-template #middleStar1>
+                        <i *ngIf="producto.rating >= 0.5; else noStar" class="material-icons">star_half</i>
+                    </ng-template>
+
+                    <i *ngIf="producto.rating >= 2; else middleStar2" class="material-icons">star</i>
+                    <ng-template #middleStar2>
+                        <i *ngIf="producto.rating >= 1.5; else noStar" class="material-icons" >star_half</i>
+                    </ng-template>
+
+                    <i *ngIf="producto.rating >= 3; else middleStar3" class="material-icons">star</i>
+                    <ng-template #middleStar3>
+                        <i *ngIf="producto.rating >= 2.5; else noStar" class="material-icons" >star_half</i>
+                    </ng-template>
+
+                    <i *ngIf="producto.rating >= 4; else middleStar4" class="material-icons">star</i>
+                    <ng-template #middleStar4>
+                        <i *ngIf="producto.rating >= 3.5; else noStar" class="material-icons" >star_half</i>
+                    </ng-template>
+
+                    <i *ngIf="producto.rating >= 5; else middleStar5" class="material-icons">star</i>
+                    <ng-template #middleStar5>
+                        <i *ngIf="producto.rating >= 4.5; else noStar" class="material-icons" >star_half</i>
+                    </ng-template>
+
+                    <ng-template class="material-icons" #noStar>
+                       <i class="material-icons">star_border</i>
+                    </ng-template>
+
+                </div>
+                <span class="opinion_counter">{{producto.opinionQuantity}} opiniones</span>
+            </div>
+            <span><b>Stock disponible:</b> {{producto.stockSize}} unidades</span>
+            <span><b>Costo de envío:</b> $?? COP</span>
+
+            <!--Color del producto-->
+            <div class="product-color">
+                <span><b>Color</b></span>
+                <div class="color-picker">
+                    <div>
+                        <input type="radio" name="color" id="pink" value="pink" checked>
+                        <label for="pink"><span></span></label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="brown" value="brown">
+                        <label for="brown"><span></span></label>
+                    </div>
+                    <div>
+                        <input type="radio" name="color" id="brown2" value="brown2">
+                        <label for="brown2"><span></span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!--Seleccionador de cantidad-->
+            <div class="quantity-product">
+                <span><b>Cantidad</b></span>
+                <input type="number" name="quantity" id="quantity">
+            </div>
+
+            <!--Botón de añadir al carrito-->
+            <input class="button1" id="add-cart" type="button" value="Añadir al carrito">
+        </div>
+    </div>
+    
+    <!--Detalles del producto-->
+    <div class="details-product">
+        <h2>Descripción</h2>
+        <p> {{producto.description}}
+        </p>
+    </div>
+
+    <!--Preguntas y opiniones-->
+    <div class="questionopinion-product">
+
+        <!--Preguntas-->
+        <div class="question-product">
+            <h2>Preguntas</h2>
+            <div class="write-question">
+                <!--Si está registrado-->
+                <textarea placeholder="Haz tu pregunta..." name="question" id="question" rows="1"></textarea>
+                <button class="button1">Preguntar</button>
+                <!--Si no-->
+                <p id=nologin><a href="#">Registrate</a> o <a href="#">Inicia sesión</a> para poder realizar preguntas</p>
+            </div>
+            <div *ngFor="let pregunta of preguntas" class="user-question-answer">
+                <p class="user-question">{{pregunta.preguntaUsuario}}</p>
+                <p class="answer">- {{pregunta.respuesta}}</p>
+            </div>
+        </div>
+
+        <!--Opiniones-->
+        <div class="opinion-product">
+            <h2>Opiniones</h2>
+
+            <!--Contadores de opiniones y de estrellas-->
+            <div class="opinion-stars">
+
+                <!--Contador de opiniones-->
+                <div class="user-opinion-counter">
+                    <span class="calification">{{producto.rating}}</span>
+                    <div class="stars">
+                        <i *ngIf="producto.rating >= 1; else middleStar1" class="material-icons">star</i>
+                        <ng-template #middleStar1>
+                            <i *ngIf="producto.rating >= 0.5; else noStar" class="material-icons">star_half</i>
+                        </ng-template>
+
+                        <i *ngIf="producto.rating >= 2; else middleStar2" class="material-icons">star</i>
+                        <ng-template #middleStar2>
+                            <i *ngIf="producto.rating >= 1.5; else noStar" class="material-icons" >star_half</i>
+                        </ng-template>
+
+                        <i *ngIf="producto.rating >= 3; else middleStar3" class="material-icons">star</i>
+                        <ng-template #middleStar3>
+                            <i *ngIf="producto.rating >= 2.5; else noStar" class="material-icons" >star_half</i>
+                        </ng-template>
+
+                        <i *ngIf="producto.rating >= 4; else middleStar4" class="material-icons">star</i>
+                        <ng-template #middleStar4>
+                            <i *ngIf="producto.rating >= 3.5; else noStar" class="material-icons" >star_half</i>
+                        </ng-template>
+
+                        <i *ngIf="producto.rating >= 5; else middleStar5" class="material-icons">star</i>
+                        <ng-template #middleStar5>
+                            <i *ngIf="producto.rating >= 4.5; else noStar" class="material-icons" >star_half</i>
+                        </ng-template>
+
+                        <ng-template class="material-icons" #noStar>
+                           <i class="material-icons">star_border</i>
+                        </ng-template>
+
+                    </div>
+                    <span class="counter">{{producto.opinionQuantity}} opiniones</span>
+                </div>
+
+                <!--Contador de estrellas-->
+                <div class="users-stars-counter">
+                    
+                    <!--Contador de estrellas 1-->
+                    <div class="star-counter-bar">
+
+                        <span>1 <i class="material-icons">star</i></span>
+
+                        <div class="bar-background">
+                            <div class="bar-inside" style="width:20%"></div>
+                        </div>
+
+                        <span>10</span>
+
+                    </div>
+                    <!--Contador de estrellas 2-->
+                    <div class="star-counter-bar">
+
+                        <span>2 <i class="material-icons">star</i></span>
+
+                        <div class="bar-background">
+                            <div class="bar-inside" style="width:20%"></div>
+                        </div>
+
+                        <span>10</span>
+
+                    </div>
+                    <!--Contador de estrellas 3-->
+                    <div class="star-counter-bar">
+
+                        <span>3 <i class="material-icons">star</i></span>
+
+                        <div class="bar-background">
+                            <div class="bar-inside" style="width:20%"></div>
+                        </div>
+
+                        <span>10</span>
+
+                    </div>
+                    <!--Contador de estrellas 4-->
+                    <div class="star-counter-bar">
+
+                        <span>4 <i class="material-icons">star</i></span>
+
+                        <div class="bar-background">
+                            <div class="bar-inside" style="width:20%"></div>
+                        </div>
+
+                        <span>10</span>
+
+                    </div>
+                    <!--Contador de estrellas 5-->
+                    <div class="star-counter-bar">
+
+                        <span>5 <i class="material-icons">star</i></span>
+
+                        <div class="bar-background">
+                            <div class="bar-inside" style="width:20%"></div>
+                        </div>
+
+                        <span>10</span>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Si está registrado-->
+            <button class="button1">Calificar y opinar</button>
+            
+            <!--Si no-->
+            <p id=nologin><a href="#">Registrate</a> o <a href="#">Inicia sesión</a> para poder evaluar un producto</p>
+            
+            <!--Opiniones de los usuarios-->
+            <div *ngFor="let opinion of opiniones" class="user-opinion-calification">
+                <div class="user-opinion-stars">
+                    <i *ngIf="opinion.calificacion >= 1; else noStar" class="material-icons">star</i>
+
+                    <i *ngIf="opinion.calificacion >= 2; else noStar" class="material-icons">star</i>
+
+                    <i *ngIf="opinion.calificacion >= 3; else noStar" class="material-icons">star</i>
+
+                    <i *ngIf="opinion.calificacion >= 4; else noStar" class="material-icons">star</i>
+
+                    <i *ngIf="opinion.calificacion >= 5; else noStar" class="material-icons">star</i>
+
+                    <ng-template class="material-icons" #noStar>
+                        <i class="material-icons">star_border</i>
+                    </ng-template>
+                </div>
+                <p class="opinion-title">{{opinion.titulo}}</p>
+                <p class="opinion-review">{{opinion.opinionUsuario}}</p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
