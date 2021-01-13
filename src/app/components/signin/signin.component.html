@@ -1,1 +1,26 @@
-<p>signin works!</p>
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="loginContainer ">
+        <h2>Ingresar</h2>
+        <div class="emailField">
+            <label>Correo electrónico</label>
+            <input type="email" name="email" formControlName="email">
+            <div *ngIf="submitted && f.email.errors">
+                <span *ngIf="f.email.errors.required" class="danger">El campo no puede estar vacío</span>
+                <span *ngIf="f.email.errors.email" class="danger">No es un correo válido</span>
+            </div>
+        </div>
+
+        <div class="passwordField">
+            <label>Contraseña</label>
+            <input type="password" name="password" formControlName="password">
+            <div *ngIf="submitted && f.password.errors">
+                <span *ngIf="f.password.errors.required" class="danger">El campo no puede estar vacío</span>
+                <span *ngIf="f.password.errors.minlength" class="danger">No es una contraseña válida</span>
+            </div>
+        </div>
+
+        <button class="loginButton" type="submit">Ingresar</button>
+
+        <p>¿No tienes cuenta? <a [routerLink]="['/signup']">Registrate</a></p>
+    </form>
+</div>

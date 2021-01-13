@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './interceptors/token-interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,15 +25,27 @@ import { SignupComponent } from './components/signup/signup.component';
     ProductDetailsComponent,
     SearchPageComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  },
+  {
+    provide: JWT_OPTIONS,
+    useValue: JWT_OPTIONS
+  }, 
+  JwtHelperService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,201 @@
+.background{
+	background-color: #097CFF;
+	width:100%;
+	height: 450px;
+	position:absolute;
+	box-shadow: 0px 3px 13px 0px #097CFF;
+}
+
+.containerProfile{
+	max-width: 1000px;
+	margin: 100px 100px 0;
+    position: relative;
+    padding-top: 110px;
+}
+
+
+.pictureName{
+	text-align: center;
+	padding: 50px 0;
+}
+
+.pictureCircle{
+	background-color: #f6f6f6;
+	width: 110px;
+	height: 110px;
+	margin: 0 auto;
+	border-radius: 50%;
+	box-sizing: border-box;
+	padding: 16px;
+	margin-bottom: 15px;
+}
+
+.pictureCircle i{
+	top:10px;
+	font-size: 75px;
+}
+
+.pictureName span{
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+}
+
+/*---------------FIN imagen y nombre de usuario---------------*/
+
+/*-------------------Datos de la cuenta---------------------*/
+
+.accountData, .personalData, .addressData, .favorites, .history{
+	background-color: white;
+	box-shadow: 0 8px 17px 3px #00000026;
+	border-radius: 8px;
+	box-sizing: border-box;
+	padding: 30px;
+	margin-bottom: 50px;
+}
+
+.dataTitle h2{
+	display: inline-block;
+	margin:0 5px 20px 0;
+}
+
+.dataTitle a{
+	text-decoration: none;
+	color: #b6b6b6;
+}
+
+.dataTitle a i{
+    position: relative;
+    top: 6px;
+    left: 4px;
+}
+
+.dataItem{
+	margin-bottom: 18px;
+}
+
+.dataItem label{
+	font-weight: bold;
+	color: #b2b2b2;
+	font-size: 16px;
+	width: 200px;
+	display: inline-block;
+	margin-bottom: 6px;
+}
+
+.historyFavorites{
+	display: flex;
+}
+
+.history{
+	width: 50%;
+	margin-right: 40px;
+}
+
+.favorites{
+	width: 50%;
+}
+
+.historyItem, .favoriteItem{
+	display: flex;
+}
+
+.imgBox{
+	margin-right: 14px;
+}
+
+.imgBox img{
+	width: 60px;
+}
+
+.infoBox span{
+	display: block;
+	margin-bottom: 4px;
+}
+
+.infoBox .status{
+	color: #097CFF;
+}
+
+.infoBox .price{
+	color: #b2b2b2;
+}
+
+@media (min-width: 1216px){
+	.containerProfile{
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 930px){
+	.containerProfile{
+		width: 730px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 740px){
+	.containerProfile{
+		min-width: 458px;
+		width: auto;
+	}
+
+	.accountData, .personalData, .addressData, .favorites, .history{
+		border-radius: 0px;
+	}
+
+	.historyFavorites{
+		display: block;
+	}
+
+	.history{
+		width: 100%;
+		margin-right: 0px;
+	}
+
+	.favorites{
+		width: 100%;
+	}
+}
+
+@media (max-width: 560px){
+    .containerProfile{
+        padding-top: 57px;
+    }
+}
+
+@media (max-width: 500px){
+	.containerProfile{
+		min-width: 200px;
+	}
+
+	.accountData, .personalData, .addressData, .favorites, .history{
+		margin-bottom: 1px;
+		padding: 30px 15px;
+	}
+
+	.dataTitle h2{
+		font-size: 16px;
+	}
+
+
+
+	.dataItem label{
+		display: block;
+		font-size: 12px;
+		
+	}
+
+	.dataItem span{
+		display: block;
+
+	}
+	.dataTitle i{
+		font-size: 20px;
+	}
+
+	.dataTitle a{
+		font-size: 12px;
+	}
+
+}

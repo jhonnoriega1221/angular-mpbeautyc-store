@@ -1,0 +1,124 @@
+<div class="background"></div>
+	<div *ngIf="usuario" class="containerProfile">
+		<div class="pictureName">
+			<div class="pictureCircle">
+				<i class="material-icons">person</i>
+			</div>
+			<span class="Names">{{usuario.name}} {{usuario.surname}}</span>
+		</div>
+
+		<div class="accountData">
+			<div class="dataTitle">
+				<h2>Datos de la cuenta</h2>
+				<a class="editButton" href="#">
+					<i class="material-icons">edit</i>
+					<span>modificar</span>
+				</a>
+			</div>
+
+			<div class="dataItem">
+				<label for="email">Correo electrónico</label>
+				<span>{{usuario.email}}</span>
+			</div>
+
+			<div class="dataItem">
+				<label for="password">Contraseña</label>
+				<span>***********</span>
+			</div>
+		</div>
+
+		<div class="personalData">
+			<div class="dataTitle">
+				<h2>Datos personales</h2>
+				<a class="editButton" href="#">
+					<i class="material-icons">edit</i>
+					<span>modificar</span>
+				</a>
+			</div>
+
+		<div class="dataItem">
+			<label for="cc">Cedula de ciudadanía</label>
+			<span>{{usuario.cc}}</span>
+		</div>
+
+		<div class="dataItem">
+			<label for="name">Nombre</label>
+			<span>{{usuario.name}}</span>
+		</div>
+
+		<div class="dataItem">
+			<label for="surname">Apellidos</label>
+			<span>{{usuario.surname}}</span>
+		</div>
+
+		<div class="dataItem">
+			<label for="telefono">Teléfono</label>
+			<span>{{usuario.phoneNumber}}</span>
+		</div>
+		</div>
+
+		<div class="addressData">
+
+			<div class="dataTitle">
+				<h2>Domicilio</h2>
+				<a class="editButton" href="#">
+					<i class="material-icons">edit</i>
+					<span>modificar</span>
+				</a>
+			</div>
+
+			<div class="dataItem">
+				<label for="address">Dirección</label>
+				<span>{{usuario.address}}</span>
+			</div>
+
+			<div class="dataItem">
+				<label for="addressComplement">Complemento de dirección</label>
+				<span>{{usuario.addressComplement}}</span>
+			</div>
+
+		</div>
+
+		<div class="historyFavorites">
+			
+			<div class="history">
+
+				<div class="dataTitle">
+					<h2>Historial de pedidos</h2>
+					<a class="seeAll" href="#">ver todo</a>
+				</div>
+				<div class="historyItem">
+					
+					<div class="imgBox">
+						<img src="img/placeholder.jpg">
+					</div>
+
+					<div class="infoBox">
+						<span class="status">Estado</span>
+						<span class="name">Nombre producto</span>
+						<span class="price">$30.000 x 1 unidad</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="favorites">
+				<div class="dataTitle">
+					<h2>Favoritos</h2>
+					<a class="seeAll" href="#">ver todo</a>
+				</div>
+				<div class="favoriteItem">
+
+					<div class="imgBox">
+						<img src="img/placeholder.jpg">
+					</div>
+
+					<div class="infoBox">
+						<span class="name">Nombre producto</span>
+						<span class="price">$30.000</span>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>

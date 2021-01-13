@@ -22,11 +22,10 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //ULTIMOS
+    //ULTIMOS        
+
     this.apiService.getProductos().subscribe(
       res => {
-
-
         if(res.length > 4)
           this.productosNuevos = res.splice(0,4);
         else

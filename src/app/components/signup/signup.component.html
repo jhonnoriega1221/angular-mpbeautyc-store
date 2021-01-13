@@ -1,1 +1,109 @@
-<p>signup works!</p>
+<div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm()" class="signupContainer">
+        <h2>Crear una cuenta</h2>
+        <span class="warning">Los campos marcados con un asterisco (*) son obligatorios</span>
+
+        <div class="mailField">
+            <label>Correo electrónico*</label>
+            <input type="email" name="email" formControlName="email">
+            <div *ngIf="submitted && f.email.errors">
+                <span *ngIf="f.email.errors.required" class="danger">El campo no puede estar vacío</span>
+                <span *ngIf="f.email.errors.email" class="danger">No es un correo válido</span>
+            </div>
+        </div>
+
+        <div class="passwordField">
+            <label>Contraseña* (mínimo 6 carácteres)</label>
+            <input type="password" name="password" formControlName="password">
+            <div *ngIf="submitted && f.password.errors">
+                <span *ngIf="f.password.errors.required" class="danger">El campo no puede estar vacío</span>
+                <span *ngIf="f.password.errors.minlength" class="danger">La contraseña debe ser de minimo 6 caracteres</span>
+            </div>
+        </div>
+
+        <div class="confirmPasswordField">
+            <label>Confirmar contraseña*</label>
+            <input type="password" name="confirmPassword" formControlName="confirmPassword">
+            <div *ngIf="submitted && f.confirmPassword.errors">
+                <span *ngIf="f.confirmPassword.errors.required" class="danger">El campo no puede estar vacío</span>
+                <span *ngIf="f.confirmPassword.errors.confirmedValidator" class="danger">Las contraseñas deben ser iguales</span>
+            </div>
+        </div>
+
+        <div class="nameSurnameFields">
+            <div class="nameField">
+                <label>Nombre*</label>
+                <input type="text" name="name" formControlName="name">
+                <div *ngIf="submitted && f.name.errors">
+                    <span *ngIf="f.name.errors.required" class="danger">El campo no puede estar vacío</span>
+                </div>
+            </div>
+            <div class="surnameField">
+                <label>Apellidos*</label>
+                <input type="text" name="surname" formControlName="surname">
+                <div *ngIf="submitted && f.surname.errors">
+                    <span *ngIf="f.surname.errors.required" class="danger">El campo no puede estar vacío</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="ccField">
+            <label>Cedula de ciudadanía*</label>
+            <input type="number" name="identification" formControlName="cc">
+            <div *ngIf="submitted && f.cc.errors">
+                <span *ngIf="f.cc.errors.required" class="danger">El campo no puede estar vacío</span>
+            </div>
+        </div>
+
+        <div class="addressField">
+            <label>Dirección (Cra, Av, Cll)*</label>
+            <input type="text" name="address" formControlName="address">
+            <div *ngIf="submitted && f.address.errors">
+                <span *ngIf="f.address.errors.required" class="danger">El campo no puede estar vacío</span>
+            </div>
+        </div>
+
+        <div class="addressComplementField">
+            <label>Complementar dirección (Barrio, urb, ed, apto, casa)</label>
+            <input type="text" name="addressComplement" formControlName="addressComplement">
+        </div>
+
+        <div class="cityCountry">
+            <div class="countryField">
+                <label>País*</label>
+                <select disabled>
+                    <option value="" selected>Colombia</option>
+                </select>
+            </div>
+
+            <div class="cityField">
+                <label>Ciudad*</label>
+                <select disabled>
+                    <option value="" selected>Cartagena</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="phoneField">
+            <label>Número de teléfono móvil*</label>
+            <input type="number" name="phone" formControlName="phoneNumber">
+            <div *ngIf="submitted && f.phoneNumber.errors">
+                <span *ngIf="f.phoneNumber.errors.required" class="danger">El campo no puede estar vacío</span>
+            </div>
+        </div>
+        <div class="legalThings">
+            <!--<p>Autorizo el tratamiento de mis datos personales y declaro que conozco mis derechos y los medios para ejercerlos conforme a la <a href="">cláusula de consentimiento</a> de datos personales.</p>-->
+
+            <div class="termConditions">
+                <input type="checkbox" name="termsConditions" formControlName="termsConditions">
+                <label for="termsConditions">He leído y acepto los <a href="#">Términos y condiciones</a> y la <a href="#">Política de privacidad</a>. Estoy de acuerdo con el uso de cookies y que mis detalles de contacto estén disponibles para gestionar mis pedidos.</label>
+                <div *ngIf="submitted && f.termsConditions.errors">
+                    <span *ngIf="f.termsConditions.errors.required" class="dangerTyc">Acepte los terminos y condiciones</span>
+                </div>
+            </div>	
+        </div>
+        <button type="submit" class="signupButton">Crear cuenta</button>
+        <p>¿Ya tienes una cuenta? <a [routerLink]="['/signin']">Ingresar</a></p>
+
+    </form>
+</div>

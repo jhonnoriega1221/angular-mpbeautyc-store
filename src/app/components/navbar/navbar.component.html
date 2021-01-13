@@ -15,9 +15,12 @@
     
     <div class="right_area">
         <div class="top_username">
-            <p class="username">Hola, invitado <br> <a class="login_register" href=""> Ingrese o registrese</a></p>
+            <p *ngIf="(!auth);else username" class="username">Hola, invitado <br> <a  class="login_register" [routerLink]="['/signin']"> Ingrese o registrese</a></p>
+            <ng-template #username>
+                <p class="username">Hola, {{userName}}</p>
+            </ng-template>
         </div>
-        <button class="topbutton"><i class="material-icons">person</i></button>
+        <a class="topbutton"><i class="material-icons" [routerLink]="['/signin']">person</i></a>
         <button class="topbutton topbuttonpc"><i class="material-icons">shopping_cart</i></button>
         <button class="topbutton topbuttonpc"><i class="material-icons">star</i></button>
     </div>

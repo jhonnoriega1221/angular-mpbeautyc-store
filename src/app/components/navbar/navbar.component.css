@@ -83,6 +83,11 @@
     cursor: pointer;
     transition: 0.2s;
     user-select: none;
+    background-color: #eeeeee;
+}
+
+.topbar .topbutton:hover{
+    background-color: #c2c2c2;
 }
 
 .topbar .topbutton .material-icons{
