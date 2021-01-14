@@ -61,6 +61,12 @@
     font-size: 14px;
 }
 
+.usernameLogueado{
+    margin: 8px 0 0 0;
+    font-weight: 600;
+    font-size: 14px;
+}
+
 .topbar .right_area .login_register{
     text-decoration: none;
     color: #c2c2c2; 
@@ -69,6 +75,53 @@
 
 .topbar .right_area .top_username{
     margin-top: 18px;
+}
+
+.right_area .menu {
+    position: absolute;
+    top: 55px;
+    right: 130px;
+    background: #fff;
+    width: 148px;
+    border-radius: 8px;
+    transition: 0.2s;
+    box-shadow: 0 8px 17px 3px #00000026;
+    text-align: left;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.user:hover .menu{
+    visibility: visible;
+    opacity: 1;
+}
+
+.right_area .menu ul li {
+    border-top: 1px solid #f3f3f3;
+    height: 42px;
+    /* margin: 0 0px 0 0; */
+    width: 100%;
+    list-style: none;
+    padding: 5px 0;
+    display: flex;
+    /* text-decoration: none; */
+}
+
+.right_area .menu i{
+    display: block;
+    margin: 4px 0 0 6px;
+}
+
+.right_area .menu a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-top: 16px;
+}
+
+.right_area .menu ul :hover{
+    background-color: #f2f2f2;
 }
 
 .topbar .topbutton{
@@ -84,6 +137,8 @@
     transition: 0.2s;
     user-select: none;
     background-color: #eeeeee;
+    text-decoration: none;
+    color: #000;
 }
 
 .topbar .topbutton:hover{
@@ -127,7 +182,7 @@
 
 /*Media para el nombre del usuario*/
 @media (max-width: 850px){
-    .topbar .right_area .username{
+    .topbar .right_area .username, .usernameLogueado{
         display: none; 
     }
 }
@@ -140,6 +195,10 @@
     
     .topbar .right_area{
         margin-right: 0;
+    }
+
+    .right_area .menu {
+        right: 40px;
     }
 }
 
@@ -168,6 +227,11 @@
 
     .topbuttonpc{
         display: none;
+    }
+
+    .right_area .menu {
+        top: 50px;
+        right: 8px;
     }
 
     /*--------------------------NAVBAR MOBILE------------------------------------*/

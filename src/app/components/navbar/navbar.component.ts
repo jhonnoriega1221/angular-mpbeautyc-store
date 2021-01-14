@@ -37,5 +37,9 @@ export class NavbarComponent implements OnInit {
       this.router.navigate(['/search/',query]);
   }
 
+  logOut(){
+    localStorage.removeItem('TOKEN');
+    window.location.reload();
+  }
 
 }

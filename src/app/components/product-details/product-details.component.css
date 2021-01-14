@@ -1,7 +1,7 @@
 /*Foto e información*/
 .photo-info{
 	display:flex;
-	margin: 0px 60px 60px
+	margin: 10px 150px 60px
 }
 
 /*Contenedor de la foto*/
@@ -47,7 +47,8 @@
 .basic-info .discount{
     display: inline;
     border-left: 1px solid #969696;
-    padding-left: 6px;
+	margin-left: 6px;
+	padding-left: 6px;
     font-size: 22px;
     font-weight: bold;
     color: #2bff39;
@@ -69,7 +70,8 @@
 /*Contador de opiniones*/
 .basic-info .opinion_counter{
     border-left: 1px solid #969696;
-    padding: 0 0 0px 6px;
+	margin-left: 6px;
+	padding-left: 6px;
     display: inline-block;
 }
 
@@ -172,9 +174,15 @@
 
 /*Otros titulos*/
 h2{
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #c6c6c6;
 	padding-bottom: 4px;
 	font-size: 18px;
+	margin:10px 0;	
+}
+
+/*Detalles del producto*/
+.details-product{
+	margin-bottom: 60px;
 }
 
 
@@ -216,8 +224,23 @@ h2{
 }
 
 /*Pregunta del usuario*/
+.question-product .user-question-answer{
+	border-bottom: 1px solid #c3c3c3;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+/*Pregunta del usuario*/
 .question-product .user-question-answer .user-question{
 	margin-bottom: 3px;
+}
+
+.danger{
+	color:#f44336;
+	font-weight: bold;
+	font-size: 13px;
+	position: relative;
+	bottom: 21px;
 }
 
 /*Respuesta*/
@@ -323,6 +346,7 @@ h2{
 	/*Foto e información*/
 	.photo-info{
 		display:block;
+		margin: 10px 80	px 60px
 	}
 
 	/*Contenedor de la foto*/
@@ -347,13 +371,12 @@ h2{
 		display: block;
 	}
 
-	.question-product{
+
+
+	.question-product, .opinion-product{
 		width:100%;
 		margin-right: 0px;
-	}
-
-	.opinion-product{
-		width: 100%;
+		margin-bottom: 60px;
 	}
 }
 

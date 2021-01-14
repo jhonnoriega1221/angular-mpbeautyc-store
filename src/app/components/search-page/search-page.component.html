@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="searchBar">
-        <input type="text" class="search" placeholder="¿Que estás buscando?" [(ngModel)]="busqueda">
-        <button class="searchBtn" type="submit" (click)="buscarProductos(busqueda)"><i class="material-icons">search</i></button>
-    </div>
+    <form class="searchBar" (ngSubmit)="buscarProductos(busqueda)">
+        <input type="text" name="search" class="search" placeholder="¿Que estás buscando?" [(ngModel)]="busqueda">
+        <button class="searchBtn" type="submit"><i class="material-icons">search</i></button>
+    </form>
     <div *ngIf="(productos.length != 0) else noSearch" class="searchContainer">
         <aside class="titleAndFilter">
             <div class="searchResultTitle">
@@ -42,7 +42,8 @@
                 </div>
                 <div class="titlePrice">
                     <h2 class="itemTitle">{{producto.name}}</h2>
-                    <span class="itemPrice">${{producto.actualPrice}} COP</span>
+                    <span class="itemPrice">${{producto.actualPrice}} COP </span>
+                    <span *ngIf="producto.discount > 0" class="itemDiscount">{{producto.discount}}%</span>
                 </div>
             </a>
             <!--Fin objeto de la lista de resulta2-->

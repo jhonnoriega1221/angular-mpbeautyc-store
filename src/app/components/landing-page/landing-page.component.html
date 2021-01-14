@@ -9,23 +9,23 @@
                 <div class="inner">
                     <div class="slide slide_1">
                         <div class="slide-content">
-                            <img src="./img/banner1.jpg">
+                            <img src="../../../assets/banner1.jpg">
                         </div>
                     </div>
                     <div class="slide slide_2">
                         <div class="slide-content">
-                            <img src="./img/banner2.jpg">
+                            <img src="../../../assets/banner2.jpg">
 
                         </div>
                     </div>
                     <div class="slide slide_3">
                         <div class="slide-content">
-                            <img src="./img/banner3.jpg">
+                            <img src="../../../assets/banner3.jpg">
                         </div>
                     </div>
                     <div class="slide slide_4">
                         <div class="slide-content">
-                            <img src="./img/banner4.jpg">
+                            <img src="../../../assets/banner4.jpg">
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@
         </div>
         <div class="wrapper">
             <div *ngFor="let producto of productosOferta" class="productcard">
-                <a class="productlink" href="#">
+                <a class="productlink" (click)="goToProduct(producto._id)">
                     <div class="imgbox">
                         <div *ngIf="producto.discount > 0" class="saleicon">
                             <img src="../../../assets/discount.png">
@@ -197,7 +197,7 @@
         <div class="wrapper">
             <!--Item de producto-->
             <div *ngFor="let producto of productosMasVendidos" class="productcard">
-                <a class="productlink" href="#">
+                <a class="productlink" (click)="goToProduct(producto._id)">
                     <div class="imgbox">
                         <div class="productimage">
                             <img src="{{producto.imgUrl}}">

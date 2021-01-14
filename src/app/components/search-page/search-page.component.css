@@ -59,6 +59,8 @@
 	color: #b2b2b2;
 }
 
+
+
 .searchResultTitle h1{
 	font-weight: lighter;
 	margin:4px 0;
@@ -123,6 +125,12 @@
 .resultSectionItem span{
 	font-weight: bold;
 	font-size: 18px;
+}
+
+.resultSectionItem .itemDiscount{
+	color: #2bff39;
+	border-left: 1px solid #c6c6c6;
+	padding-left: 6px;
 }
 
 @media (max-width: 572px){

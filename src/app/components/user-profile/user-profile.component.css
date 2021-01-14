@@ -8,7 +8,7 @@
 
 .containerProfile{
 	max-width: 1000px;
-	margin: 100px 100px 0;
+	padding: 100px 100px 0;
     position: relative;
     padding-top: 110px;
 }
@@ -129,14 +129,13 @@
 
 @media (max-width: 930px){
 	.containerProfile{
-		width: 730px;
 		margin: 0 auto;
 	}
 }
 
 @media (max-width: 740px){
 	.containerProfile{
-		min-width: 458px;
+		padding: 100px 0 0 0;
 		width: auto;
 	}
 
@@ -160,7 +159,7 @@
 
 @media (max-width: 560px){
     .containerProfile{
-        padding-top: 57px;
+		padding:57px 0 0 0;
     }
 }
 

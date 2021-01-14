@@ -6,22 +6,36 @@
     </div>
 
     <div class="center_area">
-        <div class="search_box">
-            <input type="text" class="search" placeholder="¿Que estás buscando?" [(ngModel)]="query">
-            <button class="search_btn" type="submit" (click)="buscarProductos(query)"><i class="material-icons">search</i></button>
+        <form class="search_box" (ngSubmit)="buscarProductos(query)">
+            <input type="text" name="search" class="search" placeholder="¿Que estás buscando?" [(ngModel)]="query">
+            <button class="search_btn" type="submit" ><i class="material-icons">search</i></button>
             
-        </div>
+        </form>
     </div>
     
     <div class="right_area">
         <div class="top_username">
             <p *ngIf="(!auth);else username" class="username">Hola, invitado <br> <a  class="login_register" [routerLink]="['/signin']"> Ingrese o registrese</a></p>
             <ng-template #username>
-                <p class="username">Hola, {{userName}}</p>
+                <p class="usernameLogueado">{{userName}}</p>
             </ng-template>
         </div>
-        <a class="topbutton"><i class="material-icons" [routerLink]="['/signin']">person</i></a>
-        <button class="topbutton topbuttonpc"><i class="material-icons">shopping_cart</i></button>
+        <a class="topbutton user">
+            <i *ngIf="!auth; else noAuthProfileButton" class="material-icons" [routerLink]="['/signin']">person</i>
+            <ng-template #noAuthProfileButton>
+                <i class="material-icons" >person</i>
+            </ng-template>
+            <div *ngIf="auth" class="menu">
+                <ul>
+                    <li [routerLink]="['/profile']"><i class="material-icons">person_outline</i><a >Mi perfil</a></li>
+                    <li (click)="logOut()" ><i class="material-icons">exit_to_app</i><a >Cerrar sesión</a></li>
+                </ul>
+            </div>
+
+        </a>
+        
+
+        <a class="topbutton topbuttonpc" [routerLink]="['/shoppingcart']"><i class="material-icons">shopping_cart</i></a>
         <button class="topbutton topbuttonpc"><i class="material-icons">star</i></button>
     </div>
 </div>
@@ -46,7 +60,7 @@
     <a class="linkmobile" [routerLink]="['/search']"><i class="material-icons nav_icon">search</i>
         <span class="nav_text">Buscar</span>
     </a>
-    <a class="linkmobile" href=""><i class="material-icons nav_icon">shopping_cart</i>
+    <a class="linkmobile" [routerLink]="['/shoppingcart']"><i class="material-icons nav_icon">shopping_cart</i>
         <span class="nav_text">Carro</span>
     </a>
     <a class="linkmobile" href=""><i class="material-icons nav_icon">star</i>

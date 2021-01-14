@@ -51,7 +51,6 @@
                 <span class="opinion_counter">{{producto.opinionQuantity}} opiniones</span>
             </div>
             <span><b>Stock disponible:</b> {{producto.stockSize}} unidades</span>
-            <span><b>Costo de envío:</b> $?? COP</span>
 
             <!--Color del producto-->
             <div class="product-color">
@@ -96,13 +95,16 @@
         <!--Preguntas-->
         <div class="question-product">
             <h2>Preguntas</h2>
-            <div class="write-question">
+            <form *ngIf="this.auth; else noAuth" [formGroup]="question" class="write-question" (ngSubmit)="realizarPregunta()">
                 <!--Si está registrado-->
-                <textarea placeholder="Haz tu pregunta..." name="question" id="question" rows="1"></textarea>
-                <button class="button1">Preguntar</button>
-                <!--Si no-->
-                <p id=nologin><a href="#">Registrate</a> o <a href="#">Inicia sesión</a> para poder realizar preguntas</p>
-            </div>
+                <textarea formControlName="userQuestion" placeholder="Haz tu pregunta..." name="question" id="question" rows="1"></textarea>
+                <button type="submit" class="button1">Preguntar</button>
+                <div *ngIf="submitted && f.userQuestion.errors">
+                    <span *ngIf="f.userQuestion.errors.required" class="danger">El campo no puede estar vacío</span>
+                    <span *ngIf="f.userQuestion.errors.maxlength" class="danger">El limite para preguntar son 150 carácteres</span>
+                </div>
+
+            </form>
             <div *ngFor="let pregunta of preguntas" class="user-question-answer">
                 <p class="user-question">{{pregunta.preguntaUsuario}}</p>
                 <p class="answer">- {{pregunta.respuesta}}</p>
@@ -221,10 +223,12 @@
             </div>
 
             <!--Si está registrado-->
-            <button class="button1">Calificar y opinar</button>
+            <button *ngIf="this.auth; else noAuth" class="button1">Calificar y opinar</button>
             
             <!--Si no-->
-            <p id=nologin><a href="#">Registrate</a> o <a href="#">Inicia sesión</a> para poder evaluar un producto</p>
+            <ng-template #noAuth>
+                <p id=nologin><a [routerLink]="['/signup']">Registrate</a> o <a [routerLink]="['/signin']">Inicia sesión</a> para poder realizar preguntas</p>
+            </ng-template>
             
             <!--Opiniones de los usuarios-->
             <div *ngFor="let opinion of opiniones" class="user-opinion-calification">

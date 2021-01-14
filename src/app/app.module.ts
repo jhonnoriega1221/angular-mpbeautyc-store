@@ -15,6 +15,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
 import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     SearchPageComponent,
     SigninComponent,
     SignupComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

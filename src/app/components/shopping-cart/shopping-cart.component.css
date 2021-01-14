@@ -1,0 +1,265 @@
+.containerShoppingCart{
+    padding: 130px 50px;
+}
+
+h1{
+    font-weight: lighter;
+}
+
+.shoppingCartItemList{
+    display: flex;
+    height: 100px;
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+
+}
+
+.itemImageBox{
+    margin-right: 20px;
+}
+
+.itemImageBox img{
+    width: 100px;
+}
+
+.itemTitleColor{
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.itemTitle{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.itemColorTitle{
+    color: #b2b2b2;
+}
+
+.itemColor{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+    background-color: #ffaec8;
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    left: 10px;
+}
+
+.itemQuantity{
+    margin: auto 60px auto 0;
+}
+
+.itemQuantitySelected{
+    padding: 0;
+    width: 58px;
+    font-size: 24px;
+    text-align-last: center;
+    border: none;
+    font-weight: bold;
+}
+
+.itemTotalPrice{
+    display: block;
+    margin: auto 60px auto 0;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+.btnDelete{
+    border-radius: 50%;
+    height: 35px;
+    min-width: 35px;
+    margin: auto 0;
+    background-color: #f44336;
+    box-shadow: 0px 3px 8px #f44336;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+}
+
+.btnDelete:hover{
+    box-shadow: 0px 6px 12px #f44336;
+    transition: 0.3s;
+}
+
+.sum{
+    display: flex;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+.sumTitle{
+    margin: 0 0 0 auto;
+    color: #b2b2b2;
+}
+
+.sumValue{
+    font-weight: bold;
+    width: 130px;
+    text-align: right;
+}
+
+.sumTotal{
+    border-top: 1px solid #e6e6e6;
+    padding: 8px 0;
+}
+
+.btnCheckout{
+    width: 250px;
+    display: block;
+    margin-left: auto;
+    border-radius: 6px;
+    border: none;
+    background-color: #097CFF;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px;
+    box-shadow: 0px 4px 12px #097CFF;
+    transition: 0.2s;
+}
+
+.btnCheckout:hover{
+    box-shadow: 0px 8px 20px #097CFF;
+    transition: 0.2s;
+}
+
+@media (max-width: 850px){
+    .containerShoppingCart{
+        padding: 130px 10px;
+    }
+}
+
+@media (max-width: 680px){
+    .containerShoppingCart{
+        padding: 130px 10px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    .shoppingCartItemList{
+        height: 60px;
+    }
+
+    .itemImageBox{
+        margin-right: 10px;
+    }
+
+    .itemImageBox img{
+        width: 60px;
+    }
+
+    .itemTitleColor{
+        margin-right: 10px;
+    }
+
+    .itemTitle{
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .itemColor{
+        width: 20px;
+        height: 20px;
+        top: 4px;
+    }
+
+    .itemQuantity{
+        margin: auto 10px auto 0;
+    }
+
+    .itemQuantitySelected{
+        font-size: 16px;
+        width: 26px;
+    }
+    
+    .itemTotalPrice{
+        margin: auto 10px auto 0;
+        font-size: 16px;
+    }
+    
+    .sum{
+        font-size: 16px;
+    }
+
+
+    
+}
+
+@media (max-width: 560px){
+    .containerShoppingCart{
+        padding: 70px 10px 110px;
+    }
+}
+
+@media (max-width: 425px){
+
+    .shoppingCartItemList{
+        height: 50px;
+    }
+
+    .itemImageBox{
+        margin-right: 10px;
+    }
+
+    .itemImageBox img{
+        width: 50px;
+    }
+
+    .itemTitle{
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .itemColorTitle{
+        font-size: 14px;
+    }
+
+    .itemColor{
+        width: 15px;
+        height: 15px;
+        top: 3px;
+    }
+
+    .itemQuantitySelected{
+        font-size: 10px;
+    }
+    
+    .itemTotalPrice{
+        font-size: 10px;
+    }
+
+    .sum{
+        font-size: 14px;
+    }
+
+    .sumTitle{
+        margin: 0;
+    }
+
+    .sumValue{
+        margin-left: auto;
+    }
+
+    .btnCheckout{
+        width: 100%;
+        margin: auto;
+        padding: 12px;
+    }
+
+    
+}

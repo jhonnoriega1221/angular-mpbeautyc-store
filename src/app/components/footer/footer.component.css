@@ -15,6 +15,11 @@ footer{
 .title{
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.networks a{
+    margin-right: 5px;
 }
 
 .network{

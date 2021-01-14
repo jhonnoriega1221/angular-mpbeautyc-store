@@ -74,6 +74,16 @@ export class ApiService {
       return this.http.get<Pregunta[]>(this.URI + "pregunta/"+productoId);
   }
 
+  realizarPregunta(userId:string, productoId:string,question:string){
+    const newPregunta = {
+      "usuarioId": userId,
+      "productoId": productoId,
+      "preguntaUsuario": question,
+      "respuesta": ''
+    }
+    return this.http.post<Pregunta>(this.URI + "pregunta", newPregunta);
+  }
+
    //-------------Obtener opiniones-------------
 
   getOpiniones(productoId:string){
