@@ -1,51 +1,28 @@
-<div class="containerShoppingCart">
-    <h1>Carrito de compras (2)</h1>
+<div *ngIf="(shoppingCart.length > 0); else noitems" class="containerShoppingCart">
+    <h1>Carrito de compras ({{shoppingCart.length}})</h1>
 
     <div class="shoppingCartList">
 
         <!--Item del carrito de compras-->
-        <div class="shoppingCartItemList">
+        <div *ngFor="let shoppingCartItem of shoppingCart" class="shoppingCartItemList">
 
             <div class="itemImageBox">
-                <img src="img/product1.jpg" alt="producto1">
+                <img src="{{shoppingCartItem.productImg}}" alt="producto1">
             </div>
 
             <div class="itemTitleColor">
-                <h3 class="itemTitle">Crema para las manos</h3>
+                <h3 class="itemTitle">{{shoppingCartItem.productName}}</h3>
                 <span class="itemColorTitle">Color: </span>
                 <span class="itemColor"></span>
             </div>
 
             <div class="itemQuantity">
-                <input value="1" type="number" name="" id="#quantitySelected" class="itemQuantitySelected">
+                <input disabled value="{{shoppingCartItem.productQty}}" type="number" name="" id="#quantitySelected" class="itemQuantitySelected">
             </div>
 
-            <span class="itemTotalPrice">$12.000 COP</span>
+            <span class="itemTotalPrice">${{shoppingCartItem.productTotal}} COP</span>
 
-            <button class="btn btnDelete"><i class="material-icons">delete</i></button>
-
-        </div>
-        <!--Fin item del carrito de compras-->
-
-        <!--Item del carrito de compras-->
-        <div class="shoppingCartItemList">
-
-            <div class="itemImageBox">
-                <img src="img/product2.jpg" alt="producto1">
-            </div>
-
-            <div class="itemTitleColor">
-                <h3 class="itemTitle">Perfume N°3 CHANEL</h3>
-               
-            </div>
-
-            <div class="itemQuantity">
-                <input value="1" type="number" name="" id="#quantitySelected" class="itemQuantitySelected">
-            </div>
-
-            <span class="itemTotalPrice">$20.000 COP</span>
-
-            <button class="btn btnDelete"><i class="material-icons">delete</i></button>
+            <button (click)="deleteItem(shoppingCartItem.productId)" class="btn btnDelete"><i class="material-icons">delete</i></button>
 
         </div>
         <!--Fin item del carrito de compras-->
@@ -54,18 +31,25 @@
 
     <div class="sum">
         <span class="sumTitle subTotal">Subtotal </span>
-        <span class="sumValue subTotalValue">$32.000 COP</span>
+        <span class="sumValue subTotalValue">${{subtotal}} COP</span>
     </div>
 
     <div class="sum">
         <span class="sumTitle shippingPrice">Costo de envío </span>
-        <span class="sumValue shippingPriceValue">$10.000 COP</span>
+        <span class="sumValue shippingPriceValue">${{shippingCost}} COP</span>
     </div>
 
     <div class="sum sumTotal">
         <span class="sumTitle total">Total </span>
-        <span class="sumValue totalValue">$42.000 COP</span>
+        <span class="sumValue totalValue">${{total}} COP</span>
     </div>
 
     <input type="button" class="btn btnCheckout" value="Realizar pedido">
+
+
 </div>
+
+<ng-template #noitems>
+    <h2 class="noHaveItemsMsj">No tienes nada en tu carrito de compras</h2>
+    <span class="noHaveItemsMsj2">Revisa nuestro catalogo por si te interesa algo</span>
+</ng-template>

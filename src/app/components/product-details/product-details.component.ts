@@ -22,7 +22,12 @@ export class ProductDetailsComponent implements OnInit {
   preguntas:Pregunta[] = new Array();
   opiniones:Opinion[] = new Array();
   question:FormGroup;
+  qty:FormGroup;
   userId:string;
+  isInCart = false;
+
+
+  
 
   constructor(
     private authService:AuthService,
@@ -31,11 +36,16 @@ export class ProductDetailsComponent implements OnInit {
     private activeRoute:ActivatedRoute,
     private fb:FormBuilder
   ) {
+
+    
+
     this.question = this.fb.group({
       userQuestion: ['',[Validators.required, Validators.maxLength(150)]]
     });
 
    }
+
+   
 
   ngOnInit(): void {
    this.activeRoute.params.subscribe(params => {
@@ -45,7 +55,27 @@ export class ProductDetailsComponent implements OnInit {
       this.apiService.getProducto(this.id).subscribe(
         res =>{
           this.producto = res;
-          console.log(res);
+          
+          this.qty = this.fb.group({
+            quantity:[1,[Validators.required, Validators.min(0), Validators.max(this.producto.stockSize)]]
+          });
+
+          if(this.auth){
+            this.apiService.getShoppingCart().subscribe(
+              res=>{
+                for(let i=0; i<res[0].products.length;i++){
+                  if(res[0].products[i].productId == this.producto._id){
+                    this.isInCart = true;
+                    break;
+                  }
+                  
+                }
+              },
+              err =>{
+                console.log(err);
+              }
+            )
+          }
         },
         err =>{
           console.log(err);
@@ -61,7 +91,6 @@ export class ProductDetailsComponent implements OnInit {
       this.apiService.getPreguntas(this.id).subscribe(
         res =>{
           this.preguntas = res;
-          console.log(res);
         },
         err =>{
           console.log(err);
@@ -71,7 +100,6 @@ export class ProductDetailsComponent implements OnInit {
       this.apiService.getOpiniones(this.id).subscribe(
         res =>{
           this.opiniones = res;
-          console.log(res);
         },
         err =>{
           console.log(err);
@@ -82,6 +110,21 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   get f() { return this.question.controls;}
+
+  agregarAlCarrito(){
+    if(this.qty.invalid)
+      return;
+
+    this.apiService.addToShoppingCart(this.producto._id, this.qty.value.quantity).subscribe(
+      res =>{
+        this.router.navigate(['/shoppingcart'])
+      },
+      err =>{
+        console.log(err);
+      }
+    )
+    
+  }
 
   realizarPregunta(){
     this.submitted = true;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { ShoppingCart } from '../interfaces/ShoppingCart';
 import { Producto } from '../interfaces/producto';
 import { Pregunta } from '../interfaces/pregunta';
 import { Opinion } from '../interfaces/opinion';
@@ -32,7 +33,7 @@ export class ApiService {
       "phoneNumber": formData.phoneNumber
     }
     
-    return this.http.post<TokenResponse>(this.URI+"auth/signup",newUserData)
+    return this.http.post<TokenResponse>(this.URI+"user/signup",newUserData)
     
   }
 
@@ -88,5 +89,23 @@ export class ApiService {
 
   getOpiniones(productoId:string){
       return this.http.get<Opinion[]>(this.URI + "opinion/"+productoId);
+  }
+
+  //-------------------CARRITO DE COMPRAS----------------------
+  getShoppingCart(){
+    return this.http.get<any>(this.URI + "shoppingcart");
+  }
+
+  addToShoppingCart(productId:string, quantity:number){
+
+    const newShoppingCartItem = {
+      "productId":productId,
+      "quantity":quantity
+    }
+    return this.http.put(this.URI + "shoppingcart",newShoppingCartItem);
+  }
+
+  deleteShoppingCartitem(productId:string){
+    return this.http.delete(this.URI + "shoppingcart/" +productId);
   }
 }

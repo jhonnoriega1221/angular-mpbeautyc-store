@@ -72,13 +72,24 @@
             </div>
 
             <!--Seleccionador de cantidad-->
+        <form [formGroup]="qty" (ngSubmit)="agregarAlCarrito()">
             <div class="quantity-product">
                 <span><b>Cantidad</b></span>
-                <input type="number" name="quantity" id="quantity">
+                <input min="1" max="{{producto.stockSize}}" formControlName="quantity" type="number" name="quantity" id="quantity">
             </div>
 
             <!--Botón de añadir al carrito-->
-            <input class="button1" id="add-cart" type="button" value="Añadir al carrito">
+            <input *ngIf="(!auth); else auth" class="button1" id="add-cart" type="button" value="Añadir al carrito" [routerLink]="['/signin']" >
+
+            <ng-template #auth>
+                <input *ngIf="(!isInCart); else isInShoppingCart" class="button1" id="add-cart" type="submit" value="Añadir al carrito">
+            </ng-template>
+
+            <ng-template #isInShoppingCart>
+                <input class="button1" type="button" id="add-cart" value="Ver en el carrito" [routerLink]="['/shoppingcart']">
+            </ng-template>
+
+        </form>
         </div>
     </div>
     

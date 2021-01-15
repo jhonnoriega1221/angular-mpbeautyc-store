@@ -1,9 +1,27 @@
+.noHaveItemsMsj, .noHaveItemsMsj2{
+    text-align: center;
+
+}
+.noHaveItemsMsj{
+    padding-top: 220px;
+    margin-bottom: 10px;
+
+}
+
+.noHaveItemsMsj2{
+    display: block;
+    font-weight: lighter;
+    margin-bottom: 300px;
+
+}
+
 .containerShoppingCart{
     padding: 130px 50px;
 }
 
 h1{
     font-weight: lighter;
+    margin-bottom: 20px;
 }
 
 .shoppingCartItemList{
