@@ -60,6 +60,7 @@ export class ProductDetailsComponent implements OnInit {
             quantity:[1,[Validators.required, Validators.min(0), Validators.max(this.producto.stockSize)]]
           });
 
+          //Obtine los datos del carrito de compras para comprobar si ya está agregado
           if(this.auth){
             this.apiService.getShoppingCart().subscribe(
               res=>{

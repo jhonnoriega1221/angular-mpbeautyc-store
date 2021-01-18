@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
+import { Router} from '@angular/router';
 
 import { ShoppingCart } from '../../interfaces/ShoppingCart';
 import { Producto } from '../../interfaces/Producto';
+import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -17,7 +19,7 @@ export class ShoppingCartComponent implements OnInit {
   total:number;
 
 
-  constructor(private apiService:ApiService) { 
+  constructor(private apiService:ApiService, private router:Router) { 
   }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class ShoppingCartComponent implements OnInit {
       res =>{
         const shoppingCartProducts = res[0].products; //Me recibe la info del carrito de compras de la base de datos
 
+        //Obtiene los productos correspondientes al carrito de compras
         this.apiService.getProductos().subscribe( //Me consulta todos los productos de la base de datos
           res =>{
             for(let i=0; i<shoppingCartProducts.length;i++){
@@ -43,7 +46,7 @@ export class ShoppingCartComponent implements OnInit {
                   this.subtotal += this.shoppingCart[i].productTotal;
                   console.log(this.shoppingCart)
                 }
-                //MEJORABLEE
+                //OPTIMIZAR PETICIONES HTTP
               }
             }
             this.shippingCost = 9000;
@@ -64,6 +67,10 @@ export class ShoppingCartComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+
+  realizarPedido(){
+    this.router.navigate(['/checkout']);
   }
 
 }

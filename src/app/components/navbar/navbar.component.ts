@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
 
   }
 
+  //Buscar producto
   buscarProductos(query:string){
     if(query != "")
       this.router.navigate(['/search/',query]);

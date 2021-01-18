@@ -1,0 +1,67 @@
+<div *ngIf="pedido" class="orderDetailsContainer">
+    <div class="progressInformation">
+        <div class="progressBar">
+            <div class="progressBarBubble">
+                <i class="material-icons active">check</i>
+                <span class="bubbleTitle">Recibido</span>
+            </div>
+            <div class="progressBarBubble">
+                <div class="line"></div>
+                <i class="material-icons">more_horiz</i>
+                <span class="bubbleTitle">Preparando</span>
+            </div>
+            <div class="progressBarBubble">
+                <div class="line"></div>
+                <i class="material-icons">more_horiz</i>
+                <span class="bubbleTitle">En camino</span>
+            </div>
+            <div class="progressBarBubble">
+                <div class="line"></div>
+                <i class="material-icons">more_horiz</i>
+                <span class="bubbleTitle">Entregado</span>
+            </div>
+        </div>
+        <img src="../../../assets/checklist.svg" alt="">
+        <span class="statusTitle">Su pedido ha sido enviado</span>
+        <span class="statusSubtitle">Pronto será preparado por uno de nuestros empleados</span>
+    </div>
+    <!--INFORMACIÓN DE LOS PRODUCTOS-->
+    <div class="orderInformation">
+        <div class="idDateAndCosts">
+            <div class="orderIdDate">
+                <span class="orderInformationId">ID del pedido - {{pedido._id}}</span>
+                <span class="orderInformationDate">Pedido realizado el {{pedido.createdAt}}</span>
+                <!--<span class="orderInformationDate">Este pedido aún no ha sido Entregado</span>-->
+            </div>
+            <div class="orderInformationCosts">
+                <div class="titleAndPrice">
+                    <span class="productsPriceTitle">Productos </span><span class="productsPrice">${{pedido.productsTotal}} COP</span>
+                </div>
+                <div class="titleAndPrice">
+                    <span class="productsPriceTitle">Costo de envío </span><span class="productsPrice">${{pedido.shippingCost}} COP</span>
+                </div>
+                <div class="totalAndPrice">
+                    <span class="totalPriceTitle">Total </span><span class="totalPrice">${{pedido.netTotal}} COP</span>
+                </div>
+            </div>
+        </div>
+        <div class="orderProductsList">
+            <!--Inicio ITEM DE LA LISTA DE PRODUCTOS-->
+            <div *ngFor="let producto of pedido.products" class="orderProductItem">
+                <div class="imgBox">
+                    <img src="{{producto.imgUrl}}" alt="">
+                </div>
+                <div class="productInfo">
+                    <span class="productTitle">{{producto.productName}}</span>
+                    <span class="productOldPrice">${{producto.oldPrice}} COP</span>
+                    <div class="productPriceAndQuantity">
+                        <span class="productActualPrice">${{producto.actualPrice}} COP</span><span *ngIf="producto.discount > 0" class="discount"> %{{producto.discount}}</span><span class="productQuantity"> x {{producto.quantity}}</span>
+                    </div>
+                    <span class="productColorTitle">Color: </span> <span class="color"></span>
+                </div>
+            </div>
+            <!--fin ITEM DE LA LISTA DE PRODUCTOS-->
+        </div>
+        <button class="btnCancelOrder">Cancelar pedido</button>
+    </div>
+</div>

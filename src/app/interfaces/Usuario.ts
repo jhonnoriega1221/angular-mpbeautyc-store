@@ -5,7 +5,7 @@ export interface Usuario{
     surname:string;
     cc:number;
     address:string;
-    addresComplement:string;
+    addressComplement:string;
     country:string;
     city:string;
     phoneNumber:string;

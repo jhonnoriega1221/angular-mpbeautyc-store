@@ -1,0 +1,19 @@
+export interface Pedido{
+    userId:string,
+    status:string,
+    shippingCost:string,
+    productsTotal:string,
+    netTotal:string,
+    [index:number]:{
+        productId:string,
+        productName:string,
+        imgUrl:string,
+        oldPrice:number,
+        actualPrice:number,
+        discount:number,
+        quantity:number,
+        color:string
+    },
+    createdAt:Date,
+    updatedAt:Date
+}

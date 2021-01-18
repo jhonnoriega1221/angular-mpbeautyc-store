@@ -32,6 +32,7 @@ export class SearchPageComponent implements OnInit {
       })
   }
 
+  //Funcion de la barra de busqueda
   buscarProductos(busqueda:string){
     if(busqueda != "")
       this.router.navigate(['/search/',busqueda]);

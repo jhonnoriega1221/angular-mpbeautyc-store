@@ -1,0 +1,138 @@
+.orderListContainer{
+    padding: 100px 50px;
+    margin: 0 auto;
+    max-width: 900px;
+    min-width: 300px;
+}
+
+.title{
+    font-weight: lighter;
+    margin: 20px 0 10px 0;
+}
+
+.orderItem{
+    background-color: #fff;
+    max-height: 180px;
+    box-shadow: 0 8px 17px 3px #00000026;
+    display: block;
+    padding:10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.orderDate{
+    display: block;
+    margin-bottom: 10px;
+
+}
+
+.imgAndInfo{
+    display: flex;
+}
+
+.imgBox{
+    width: 100px;
+    margin-right: 10px;
+    display: block;
+}
+
+.imgBox img{
+    width: 100%;
+    max-width: 100px;
+    min-width: 50px;
+}
+
+.orderInfo{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*---------ORDER STATUS----------*/
+.orderStatus{
+    font-weight: bold;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.pending{
+    color: #2196F3;
+}
+.shipped{
+    color: #4CAF50;
+}
+.canceled{
+    color: #F44336;
+}
+
+/*---------END ORDER STATUS----------*/
+
+.productsList{
+    display: block;
+    margin-bottom: 7px;
+}
+
+.productNameAndQuantity{
+    display: flex;
+    
+}
+
+.productName{
+    color: #b2b2b2;
+    display: inline ;
+    margin-bottom: 1px;
+    margin-right: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.productQuantity{
+    display: block;
+    white-space: nowrap;
+}
+
+.orderPrice{
+    font-weight: bold;
+}
+
+
+
+.btnDetails{
+    outline: none;
+    width: 160px;
+    height: 40px;
+    display: block;
+    margin-right: 20px;
+    border-radius: 6px;
+    border: none;
+    background-color: #097CFF;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px;
+    box-shadow: 0px 4px 12px #097CFF;
+    transition: 0.2s;
+    white-space: nowrap;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btnDetails:hover{
+    box-shadow: 0px 8px 20px #097CFF;
+    transition: 0.2s;
+}
+
+@media (max-width:768px){
+    .orderListContainer{
+        padding: 0 10px;
+    }
+}
+
+@media (max-width:425px){
+    .btnDetails{
+        display: none;
+    }
+}

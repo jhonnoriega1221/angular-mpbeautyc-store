@@ -1,0 +1,79 @@
+<div class="checkoutContainer">
+    <h1 class="mainTitle">Completa tu compra</h1>
+    <div class="cartSummaryAndPaymentData">
+        <div class="paymentData">
+            <h2 class="title">
+                Información de pago
+            </h2>
+            <h3 class="title2">
+                Metodo de pago
+            </h3>
+            <div class="paymentMethod">
+                <div class="iconAndPayment">
+                    <i class="material-icons">local_shipping</i>
+                    <span>Pago contra entrega</span>
+                </div>
+            </div>
+            <h3 class="title2">Información del cliente</h3>
+            <div *ngIf="userInfo" class="userInformation">
+                <div class="sideTextAndBox">
+                    <label class="labelText">Correo electrónico</label>
+                    <span class="info">Se enviará un recibo a este correo</span>
+                    <span class="boxText">{{userInfo.email}}</span>
+                </div>
+                <div class="sideTextAndBox">
+                    <label class="labelText">Nombre</label>
+                    <span class="boxText">{{userInfo.name}}</span>
+                </div>
+                <div class="sideTextAndBox">
+                    <label for="" class="labelText">Apellidos</label>
+                    <span class="boxText">{{userInfo.surname}}</span>
+                </div>
+                <div class="sideTextAndBox">
+                    <label for="" class="labelText">C.C.</label>
+                    <span class="boxText">{{userInfo.cc}}</span>
+                </div>
+                <h3 class="title2">Información de dirección del cliente</h3>
+                <div class="sideTextAndBox">
+                    <label for="" class="labelText">Dirección de envío</label>
+                    <span class="boxText">{{userInfo.address}}</span>
+                </div>
+                <div class="sideTextAndBox">
+                    <label for="" class="labelText">Complemento de dirección</label>
+                    <span class="boxText">{{userInfo.addressComplement}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="shoppingCart" class="cartSummary1">
+            <h2 class="title">
+                Resumen de compra
+            </h2>
+            <div class="textAndPrice">
+                <span class="articleText">{{quantityTotal}} articulos</span><span class="price">${{subtotal}} COP</span>
+            </div>
+            <div class="textAndPrice">
+                <span class="articleText">Costo de envío</span><span class="price">${{shippingCost}} COP</span>
+            </div>
+            <div class="totalAndPrice">
+                <span class="totalPrice">Total </span><span class="price">${{total}} COP</span>
+            </div>
+        </div>
+
+        <div class="cartSummary2">
+            <h2 class="title">
+                Resumen de compra
+            </h2>
+            <div class="textAndPrice">
+                <span class="articleText">{{quantityTotal}} articulos</span><span class="price">${{subtotal}} COP</span>
+            </div>
+            <div class="textAndPrice">
+                <span class="articleText">Costo de envío</span><span class="price">${{shippingCost}} COP</span>
+            </div>
+            <div class="totalAndPrice">
+                <span class="totalPrice">Total </span><span class="price">${{total}} COP</span>
+            </div>
+        </div>
+    </div>
+    <button (click)="realizarPedido()" class="btnPlaceOrder">Realizar pedido</button>
+</div>

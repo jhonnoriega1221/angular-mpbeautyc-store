@@ -22,7 +22,7 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
 
-    //ULTIMOS        
+    //ULTIMOS PRODUCTOS       
 
     this.apiService.getProductos().subscribe(
       res => {

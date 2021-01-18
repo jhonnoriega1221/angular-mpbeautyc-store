@@ -16,6 +16,9 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     SigninComponent,
     SignupComponent,
     UserProfileComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    CheckoutPageComponent,
+    OrderListComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,

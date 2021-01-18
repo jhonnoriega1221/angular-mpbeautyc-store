@@ -6,6 +6,7 @@ import { Producto } from '../interfaces/producto';
 import { Pregunta } from '../interfaces/pregunta';
 import { Opinion } from '../interfaces/opinion';
 import { Usuario } from '../interfaces/Usuario';
+import { Pedido } from '../interfaces/Pedido';
 import { TokenResponse } from '../interfaces/TokenResponse';
 
 
@@ -107,5 +108,26 @@ export class ApiService {
 
   deleteShoppingCartitem(productId:string){
     return this.http.delete(this.URI + "shoppingcart/" +productId);
+  }
+
+  //-----------------PEDIDOS---------------------//
+  realizarPedido(shippingCost:number, subtotal:number, total:number, shoppingCart:any[]){
+    const newPedido = {
+      "shippingCost":shippingCost,
+      "productsTotal":subtotal,
+      "netTotal":total,
+      "products":shoppingCart
+    }
+
+    console.log(shoppingCart);
+    return this.http.post(this.URI + "pedido",newPedido); 
+  }
+
+  getPedido(id:string){
+    return this.http.get<Pedido>(this.URI+"pedido/"+id);
+  }
+
+  getPedidosUsuario(){
+    return this.http.get<Pedido[]>(this.URI+"pedido/user");
   }
 }
