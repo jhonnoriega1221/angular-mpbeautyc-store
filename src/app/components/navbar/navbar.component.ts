@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { from } from 'rxjs';
 import { AuthService } from '../../auth/auth.service';
 import { ApiService } from '../../services/api.service';
+import { NavbarService } from '../../services/navbar.service';
 
 
 @Component({
@@ -13,12 +15,15 @@ export class NavbarComponent implements OnInit {
   
   query:string;
 
-  constructor(private apiService:ApiService ,private authService:AuthService ,private router:Router) { }
+  constructor(private apiService:ApiService ,private authService:AuthService ,private router:Router, public nav:NavbarService) { }
 
   userName:string;
   auth:boolean;
 
   ngOnInit(): void {
+
+     
+
     this.auth = this.authService.isAuthenticated();
     if(this.auth)
       this.apiService.getUsuario().subscribe(

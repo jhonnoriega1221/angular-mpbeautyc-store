@@ -8,6 +8,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminProductsListComponent } from './components/admin-products-list/admin-products-list.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
@@ -28,7 +31,10 @@ const routes: Routes = [
   { path: 'shoppingcart', component: ShoppingCartComponent, canActivate: [AuthGuard] },
   { path: 'checkout', component:CheckoutPageComponent, canActivate:[AuthGuard]},
   { path: 'profile/order', component:OrderListComponent, canActivate:[AuthGuard]},
-  { path: 'profile/order/:id', component:OrderDetailsComponent, canActivate:[AuthGuard]}
+  { path: 'profile/order/:id', component:OrderDetailsComponent, canActivate:[AuthGuard]},
+  { path: 'admin', redirectTo:'admin/dashboard', pathMatch:  'full' },
+  { path: 'admin/dashboard', component:AdminDashboardComponent},
+  { path: 'admin/signin', component: AdminLoginComponent}
 ];
 
 @NgModule({

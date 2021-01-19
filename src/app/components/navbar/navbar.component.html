@@ -1,4 +1,4 @@
-<div class="topbar">
+<div *ngIf="!nav.visible" class="topbar">
     <div class="left_area">
         <div class="logo_page">
             <img class="logo" src="../../../assets/mplogo.jpg" alt="MP Beauty Cosmetics">
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<nav class="navbar">
+<nav *ngIf="!nav.visible" class="navbar">
     <div class="linkspc">
         <a class="navlinkpc" [routerLink]="['/']">Inicio</a>
         <a class="navlinkpc" href="#">Categorias</a>

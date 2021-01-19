@@ -19,6 +19,11 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
 import { CheckoutPageComponent } from './components/checkout-page/checkout-page.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { AdminProductsListComponent } from './components/admin-products-list/admin-products-list.component';
+import { AdminsListComponent } from './components/admins-list/admins-list.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     ShoppingCartComponent,
     CheckoutPageComponent,
     OrderListComponent,
-    OrderDetailsComponent
+    OrderDetailsComponent,
+    AdminDashboardComponent,
+    AdminLoginComponent,
+    AdminProductsListComponent,
+    AdminsListComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,
