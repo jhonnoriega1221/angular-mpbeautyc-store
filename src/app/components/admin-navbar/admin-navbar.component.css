@@ -1,0 +1,205 @@
+/*------------------------------TOPBAR----------------------------*/
+.topbar{
+    position: fixed;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+}   
+
+.topbar .left_area{
+    display: flex;
+}
+
+.topbar #sidebar__btn{
+    display: none;
+}
+
+.topbar .logo_page{
+    margin-left: 23px;
+}
+
+.topbar #sidebar__btn .material-icons{
+    font-size: 24px;
+}
+
+.topbar .right_area{
+    display: flex;
+}
+
+.topbar .top__button{
+    border: 0;
+    border-radius: 100%;
+    width: 32px;
+    height: 32px;
+    margin-right: 18px;
+    background: #eeeeee;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    user-select: none;
+}
+
+.toolbarButton{
+    background-color: #ffffff1f;
+    margin: 0 5px;
+    transition: 0.2s;
+}
+
+.toolbarButton:hover{
+    background-color: #ffffff2c;
+    transition: 0.2s;
+}
+
+.topbar .top__button:hover{
+    background: #b8b8b8;
+}
+
+.profile{
+    width: 32px;
+    border-radius: 100%;
+
+}
+
+.center_area{
+background: #000;
+}
+
+/*--------------------------------------------------------*/
+
+/*---------------------MOBILE NAV-----------------------*/
+.nav{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+    z-index:2;
+}
+
+.nav__link{ 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+/*------------------------------------------------*/
+
+/*------------------------PC NAV----------------*/
+@media (min-width: 426px){
+    .nav{
+        width: 240px;
+        height: 100%;
+        left: 0;
+        padding-top: 13px;
+        transition: 0.2s;
+        transition-property: width;
+        display: block;
+        margin-bottom: -69px;
+        box-shadow: 0px 4px 3px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .nav__link{
+        color: #444444;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        padding: 12px 0px 6px 24px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 13px;
+        transition: background-color 0.1s ease-in-out;
+    }
+
+    .nav__link .mat-icon{
+        place-self: center;
+    }
+
+    .nav__link .nav__icon{
+        vertical-align: -4px;
+    }
+
+    .nav__link .nav__text{
+        padding-left: 15px;
+        position: relative;
+        bottom: 6px;
+
+    }
+
+
+    .topbar #sidebar__btn{
+    display: block;
+    margin: auto 0 auto 8px;
+    user-select: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+    }
+
+    .content{
+        margin-left: 240px;
+    }
+
+    /*------------------Checked--------------------*/
+
+    #check:checked ~ .nav{
+        width: 72px;
+    }
+    
+    #check:checked ~ .nav .nav__link{
+        display: grid;
+        line-height: 17px;
+        font-size: 11px;
+        align-content: center;
+        padding: 12px 3px;
+        text-align: center;
+    }
+
+    #check:checked ~ .nav .nav__link .nav__text{
+        padding-left:0px;
+        position: relative;
+        bottom:0px;
+        
+    }
+
+    #check:checked ~ .content{
+        margin-left: 72px;
+    }
+
+    .nav__link--active{
+        color: #3f51b5;
+        background-color: rgba(0, 0, 0, 0.048);
+    }
+}
+/*------------------------PC NAV----------------*/
+
+/*-----------------GENERAL-------------------*/
+#check{
+    display: none;
+}
+
+.nav__link:hover{
+    background-color: #eeeeee;
+}
+
+.nav__link--active{
+    color: #3f51b5;
+}

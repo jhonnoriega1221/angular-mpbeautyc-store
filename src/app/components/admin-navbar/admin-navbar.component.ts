@@ -8,7 +8,8 @@ import{ NavbarService } from '../../services/navbar.service';
 })
 export class AdminNavbarComponent implements OnInit {
 
-  constructor(public nav:NavbarService) { }
+  constructor(
+    public nav:NavbarService) { }
 
   ngOnInit(): void {
   }

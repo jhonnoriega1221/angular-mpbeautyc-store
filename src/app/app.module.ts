@@ -1,9 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './interceptors/token-interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+
+//----------------MATERIAL MODULES-----------------------//
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRippleModule } from '@angular/material/core';
+import { MatListModule } from '@angular/material/list';
+import { MatSliderModule } from '@angular/material/slider';
+
+//-------------------------------------------------------//
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,10 +60,19 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    //---------------------------MATERIAL MODULES-------------//
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatRippleModule,
+    MatListModule,
+    MatSliderModule
+    //--------------------------------------------------------//
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

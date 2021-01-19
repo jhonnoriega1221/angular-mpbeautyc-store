@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-admin-products-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminProductsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private nav:NavbarService
+  ) { }
 
   ngOnInit(): void {
+    this.nav.show();
   }
 
 }

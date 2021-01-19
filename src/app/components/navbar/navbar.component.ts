@@ -15,7 +15,12 @@ export class NavbarComponent implements OnInit {
   
   query:string;
 
-  constructor(private apiService:ApiService ,private authService:AuthService ,private router:Router, public nav:NavbarService) { }
+  constructor(
+    private apiService:ApiService,
+    private authService:AuthService,
+    private router:Router, 
+    public nav:NavbarService
+    ) { }
 
   userName:string;
   auth:boolean;

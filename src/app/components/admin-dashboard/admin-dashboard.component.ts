@@ -7,13 +7,15 @@ import { NavbarService } from '../../services/navbar.service';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-
-  adminMode = true;
+  
+  selectedValue: string;
 
   constructor(private nav:NavbarService) { }
 
   ngOnInit(): void {
     this.nav.show();
+
+    
   }
 
 }

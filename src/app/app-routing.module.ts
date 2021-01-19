@@ -34,7 +34,8 @@ const routes: Routes = [
   { path: 'profile/order/:id', component:OrderDetailsComponent, canActivate:[AuthGuard]},
   { path: 'admin', redirectTo:'admin/dashboard', pathMatch:  'full' },
   { path: 'admin/dashboard', component:AdminDashboardComponent},
-  { path: 'admin/signin', component: AdminLoginComponent}
+  { path: 'admin/signin', component: AdminLoginComponent},
+  { path: 'admin/products', component: AdminProductsListComponent}
 ];
 
 @NgModule({

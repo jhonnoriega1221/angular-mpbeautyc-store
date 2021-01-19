@@ -1,1 +1,35 @@
-<p *ngIf="nav.visible">admin-navbar works!</p>
+<input *ngIf="nav.visible" type="checkbox" id="check">
+    <mat-toolbar color="primary" *ngIf="nav.visible" class="topbar">
+        <div class="left_area">
+            <label for="check" id="sidebar__btn"><i class="material-icons nav__icons">menu</i></label>
+            <h2 class="logo_page">MPBeautyC Admin</h2>
+
+        </div>
+        <div class="right_area">
+
+            <button class="toolbarButton" mat-icon-button><mat-icon>notifications</mat-icon> </button>
+            <button class="toolbarButton" mat-icon-button><mat-icon>person</mat-icon> </button>
+            
+           <!-- <button class="top__button"><i class="material-icons">notifications</i></button>
+            <button class="top__button"><img class="profile" src="img/user.png" alt=""></button>-->
+        </div>
+    </mat-toolbar>
+    <nav *ngIf="nav.visible" class="nav">
+
+        <a mat-ripple routerLink="/admin/dashboard" class="nav__link" routerLinkActive="nav__link--active"><mat-icon>dashboard</mat-icon>
+            <span class="nav__text">Dashboard</span>
+        </a>
+        <a mat-ripple routerLink="/admin/products" class="nav__link" routerLinkActive="nav__link--active"><mat-icon>view_list</mat-icon>
+            <span class="nav__text">Inventario</span>
+        </a>
+        <a mat-ripple href="#" class="nav__link"><mat-icon>groups</mat-icon>
+            <span class="nav__text">Clientes</span>
+        </a>
+        <a mat-ripple href="#" class="nav__link"><mat-icon>trending_up</mat-icon>
+            <span class="nav__text">Ventas</span>
+        </a>
+        <a mat-ripple href="#" class="nav__link"><mat-icon>admin_panel_settings</mat-icon>
+            <span class="nav__text">Ajustes</span>
+        </a>
+    </nav>
+
