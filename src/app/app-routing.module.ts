@@ -13,6 +13,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminProductsListComponent } from './components/admin-products-list/admin-products-list.component';
 import { OrderListComponent } from './components/order-list/order-list.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { AdminProductDetailsComponent } from './components/admin-product-details/admin-product-details.component';
 
 
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'admin', redirectTo:'admin/dashboard', pathMatch:  'full' },
   { path: 'admin/dashboard', component:AdminDashboardComponent},
   { path: 'admin/signin', component: AdminLoginComponent},
-  { path: 'admin/products', component: AdminProductsListComponent}
+  { path: 'admin/products', component: AdminProductsListComponent},
+  { path: 'admin/products/:id', component: AdminProductDetailsComponent}
 ];
 
 @NgModule({

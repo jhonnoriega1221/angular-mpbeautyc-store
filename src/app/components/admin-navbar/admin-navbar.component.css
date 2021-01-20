@@ -19,7 +19,7 @@
 }
 
 .topbar .logo_page{
-    margin-left: 23px;
+    font-size: 16px;
 }
 
 .topbar #sidebar__btn .material-icons{
@@ -46,7 +46,7 @@
 
 .toolbarButton{
     background-color: #ffffff1f;
-    margin: 0 5px;
+    margin-left: 10px;
     transition: 0.2s;
 }
 

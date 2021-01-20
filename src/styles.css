@@ -6,12 +6,25 @@
 
 .adminContainer{
     background-color: #e3e3e3;
-    padding: 56px 0 0px 72px;
+    padding: 56px 0 100% 72px;
+    box-sizing: border-box;
+}
+
+.loadMatSpinner{
+    margin: 200px auto;
+    
 }
 
 @media (max-width: 560px){
     .container{
         padding: 48px 10px 20px 10px;
+    }
+}
+
+@media (max-width: 425px){
+    .adminContainer{
+        background-color: #e3e3e3;
+        padding: 56px 0 0 0;
     }
 }
 html, body { height: 100%; }

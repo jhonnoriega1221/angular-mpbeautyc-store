@@ -1,6 +1,85 @@
 <div class="adminContainer">
+    <div class="titleAndSearchAdd">
+        <h2 class="title">Inventario de productos</h2>
+        <button class="btnAdd" mat-raised-button color="primary">Agregar producto</button>
+        <button class="btnFabAdd" mat-fab color="primary">
+            <mat-icon>add</mat-icon>
+        </button>
+
+    </div>
+<!--
+    <div class="listaProductos">
+        <div *ngFor="let producto of productos" class="itemListaProductos">
+            <img class="productImg" src="{{producto.imgUrl}}" alt="">
+            <div class="nameAndStock">
+                <h3 class="productName">{{producto.name}}</h3>
+                <span class="productoStock"><b>{{producto.stockSize}}</b> en stock</span>
+            </div>
+            <span class="productoStatus">{{producto.status}}</span>
+            <span class="productActualPrice"><b>$</b>{{producto.actualPrice}} <b>COP</b></span>
+            <span class="productDiscount">{{producto.discount}}%</span>
+            <div class="ratingAndStar">
+                <span class="productRating">{{producto.rating}}</span>
+                <mat-icon class="productStarIcon">star</mat-icon>
+            </div>
+        </div>
+ 
+    </div>
+
+
     <mat-list>
-        <mat-list-item>Algo</mat-list-item>
-        <mat-list-item>Otra cosa</mat-list-item>
-    </mat-list>
+        <mat-list-item *ngFor="let producto of productos">
+            <img matListAvatar src="{{producto.imgUrl}}">
+            <h3 matLine>
+                {{producto.name}}
+            </h3>
+            <p matLine>
+                <span><b>{{producto.stockSize}}</b> en stock</span>
+            </p>
+        </mat-list-item>
+    </mat-list>-->
+
+    
+    <table mat-table [dataSource]="productos">
+        
+        <ng-container matColumnDef="img">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let producto"><img class="productImg" src="{{producto.imgUrl}}" alt=""></td>
+        </ng-container>
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let producto"><a [routerLink]="['/admin/products',producto._id]">{{producto.name}}</a></td>
+        </ng-container>
+
+        <ng-container matColumnDef="stockSize">
+            <th mat-header-cell *matHeaderCellDef>Stock</th>
+            <td mat-cell *matCellDef="let producto">{{producto.stockSize}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef><span class="hidePriceDiscount">Precio</span></th>
+            <td mat-cell *matCellDef="let producto"><span class="hidePriceDiscount">{{producto.actualPrice}}</span></td>
+        </ng-container>
+
+        <ng-container matColumnDef="discount">
+            <th mat-header-cell *matHeaderCellDef><span class="hidePriceDiscount">Descuento</span></th>
+            <td mat-cell *matCellDef="let producto"><span class="hidePriceDiscount">{{producto.discount}}</span></td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef><span class="hideStatus">Estado</span></th>
+            <td mat-cell *matCellDef="let producto"><span class="hideStatus">{{producto.status}}</span></td>
+        </ng-container>
+
+        <ng-container  matColumnDef="rating">
+            <th mat-header-cell *matHeaderCellDef><span class="hideRating">Calificación</span></th>
+            <td mat-cell *matCellDef="let producto"><span class="hideRating">{{producto.rating}}⭐</span></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr  mat-row class="tableRow" *matRowDef="let row; columns:columnsToDisplay;"></tr>
+    </table>
+
+
 </div>

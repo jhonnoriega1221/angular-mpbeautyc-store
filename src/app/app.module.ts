@@ -13,6 +13,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 
 //-------------------------------------------------------//
@@ -36,6 +43,7 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
 import { AdminProductsListComponent } from './components/admin-products-list/admin-products-list.component';
 import { AdminsListComponent } from './components/admins-list/admins-list.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { AdminProductDetailsComponent } from './components/admin-product-details/admin-product-details.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +64,8 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
     AdminLoginComponent,
     AdminProductsListComponent,
     AdminsListComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    AdminProductDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +80,13 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
     MatIconModule,
     MatRippleModule,
     MatListModule,
+    MatTableModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
     MatSliderModule
     //--------------------------------------------------------//
   ],

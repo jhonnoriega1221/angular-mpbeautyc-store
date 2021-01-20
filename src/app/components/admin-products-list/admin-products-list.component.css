@@ -1,0 +1,134 @@
+table{
+    width: 100%;
+}
+
+.btnAdd{
+    display: none;
+}
+
+.productImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 24px;
+    position: relative;
+    top:4px;
+}
+
+.titleAndSearchAdd{
+    background-color: #fff;
+    display: flex;
+}
+
+.title{
+    padding: 12px 0 12px 24px;
+    display: block;
+    box-sizing: border-box;
+    margin:0;
+    margin-right: auto;
+    font-size: 20px;
+}
+
+
+
+.tableRow:hover{
+    background-color: rgba(0, 0, 0, 0.034);
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: #3f51b5;
+}
+
+.hidePriceDiscount{
+    display: none;
+}
+
+.hideRating{
+    display: none;
+}
+
+.hideStatus{
+    display: none;
+}
+
+.btnFabAdd{
+    position: fixed;
+    bottom: 74px;
+    right: 18px;
+}
+
+@media (min-width: 768px){
+    .hidePriceDiscount{
+        display: inline-table;
+    }
+}
+
+@media (min-width: 550px){
+    .hideRating{
+        display: inline-table;
+    }
+}
+
+@media (min-width: 426px){
+    .btnAdd{
+        height: 36px;
+        align-self: center;
+        margin-right: 24px;
+        display: block;
+     }
+
+     .btnFabAdd{
+         display: none;
+     }
+}
+
+@media (min-width: 350px){
+    .hideStatus{
+        display: inline-table;
+    }
+}
+
+
+/*
+.listaProductos{
+    width: 100%;
+}
+
+.itemListaProductos{
+ 
+    display: flex;
+    height: 72px;
+    padding: 0 16px;
+    align-items: center;
+}
+
+.productImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 24px;
+}
+
+.nameAndStock{
+    padding-left: 16px 
+}
+
+.productName{
+    margin:0;
+}
+
+.productoStatus{
+    margin: 0 auto;
+}
+
+.productActualPrice{
+    margin: 0 auto;
+}
+
+.productDiscount{
+    margin: 0 auto;
+}*/

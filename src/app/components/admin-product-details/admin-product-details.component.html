@@ -1,0 +1,119 @@
+<div class="adminContainer">
+    <h2 class="title" *ngIf="producto; else spinner">{{producto.name}}</h2>
+    <div *ngIf="producto; else spinner" class="subContainer">
+        <mat-accordion  class="accordion" multi>
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+
+                        Información básica
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>image</mat-icon>
+
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="photoAndInfo">
+                    <div class="imgBox">
+                        <img class="imgProduct" src="{{producto.imgUrl}}" alt="">
+                    </div>
+                    <div class="info">
+                        <mat-form-field class="productName" appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                        <div class="productBrandAndCategory">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Marca</mat-label>
+                                <mat-select>
+                                    <mat-option *ngFor="let marca of marcas" [value]="marca.value">
+                                        {{marca.view}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline">
+                                <mat-label>Categoría</mat-label>
+                                <mat-select>
+                                <mat-option *ngFor="let categoria of categorias" [value]="categoria.value">
+                                    {{categoria.view}}
+                                </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Descripcion
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>format_align_left</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción del producto</mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Precio y descuento
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>monetization_on</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="priceAndDiscount">
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio del producto</mat-label>
+                    <input matInput type="number">
+                    <span matPrefix>$</span>
+                    <span matSuffix>COP</span>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Descuento</mat-label>
+                    <input matInput type="number">
+                    <span matSuffix>%</span>
+                </mat-form-field>
+            </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Inventario
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>inventory_2</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <mat-form-field class="productStock" appearance="outline">
+                    <mat-label>Stock</mat-label>
+                    <input matInput type="number">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    div.status
+                    <mat-label>Estado</mat-label>
+                    <mat-select>
+                        <mat-option  [value]="1">Disponible</mat-option>
+                        <mat-option  [value]="2">Sin de stock</mat-option>
+                        <mat-option  [value]="3">Dado de baja</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>
+
+<ng-template #spinner>
+    <mat-spinner class="loadMatSpinner"></mat-spinner>
+</ng-template>
