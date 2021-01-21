@@ -51,7 +51,7 @@ input::-webkit-inner-spin-button {
     text-align: right;
 }
 
-.btnModifyProduct, .btnUnsubscribeProduct, .btnSubscribeProduct{
+.btnAddProduct{
     margin: 10px 0 10px auto;
     display: block;
 }
@@ -65,9 +65,6 @@ input::-webkit-inner-spin-button {
         display: flex;
     }
 
-    .stockAndStatus{
-        display: flex;
-    }
 
     .imgProduct{
         width: 100%;

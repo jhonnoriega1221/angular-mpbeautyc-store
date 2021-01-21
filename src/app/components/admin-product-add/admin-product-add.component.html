@@ -1,0 +1,131 @@
+<div class="adminContainer">
+    <h2 class="title" >Nuevo producto</h2>
+    <form  class="subContainer" [formGroup]="productForm" (ngSubmit)="addProduct()" >
+        <mat-accordion  class="accordion" multi>
+
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+
+                        Información básica
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>image</mat-icon>
+
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!--FORM DE LA IMAGEN, NOMBRE, MARCA Y CATEGORÍA DEL PRODUCTO-->
+                <div class="photoAndInfo">
+                    <!--Imagen-->
+                    <div class="imgBox">
+                        <input type="file" style="display:none;" (change)="photoSelected($event)" #photoInput>
+                        <img class="imgProduct" [src]="bufferPhotoSelected || '../../../assets/noimage.png'" alt="No Image" (click)="photoInput.click()">            
+                    </div>
+                    <div class="info">
+                        <!--Nombre-->
+                        <mat-form-field class="productName" appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput formControlName="productName">
+                        </mat-form-field>
+                        <div class="productBrandAndCategory">
+                            <!--Categoría-->
+                            <mat-form-field appearance="outline">
+                                <mat-label>Categoría</mat-label>
+                                <mat-select formControlName="productCategory">
+                                    <mat-option *ngFor="let categoria of categorias" value="{{categoria.value}}" >
+                                        {{categoria.view}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <!--Marca-->
+                            <mat-form-field appearance="outline">
+                                <mat-label>Marca</mat-label>
+                                <mat-select formControlName="productBrand">
+                                    <mat-option *ngFor="let marca of marcas" value="{{marca.value}}" >
+                                        {{marca.view}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Descripción
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>format_align_left</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!--FORM DESCRIPCIÓN DEL PRODUCTO-->
+                <mat-form-field appearance="outline">
+                    <mat-label>Descripción del producto</mat-label>
+                    <textarea class="productDescription"  matInput formControlName="productDescription"></textarea>
+                </mat-form-field>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Precio
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>monetization_on</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!--FORM DEL PRECIO Y EL DESCUENTO EL PRODUCTO-->
+                <div class="priceAndDiscount">
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio del producto</mat-label>
+                    <input matInput type="number" formControlName="productPrice">
+                    <span matPrefix>$</span>
+                    <span matSuffix>COP</span>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Descuento</mat-label>
+                    <input class="productDiscount" matInput type="number" formControlName="productDiscount">
+                    <span matSuffix>%</span>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Precio final de venta</mat-label>
+                    <input disabled matInput type="number" value="{{finalPrice}}">
+                    <span matPrefix>$</span>
+                    <span matSuffix>COP</span>
+                </mat-form-field>
+            </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel expanded>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Inventario
+                    </mat-panel-title>
+                    <mat-panel-description>
+                         
+                        <mat-icon>inventory_2</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!--FORM DEL LA INFO EN STOCK Y EL ESTADO DEL PRODUCTO-->
+                <div class="stockAndStatus">
+                    <mat-form-field class="productStock" appearance="outline" >
+                        <mat-label>Stock</mat-label>
+                        <input matInput type="number" formControlName="productStockSize">
+                    </mat-form-field>
+                </div>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+        <div class="actionButtons">
+            <button class="btnAddProduct" type="submit" mat-raised-button color="primary">Agregar producto</button>
+        </div>
+    </form>
+
+
+</div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { confirmedValidator } from './confirmed.validator';
 import { ApiService } from '../../services/api.service';
-import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,7 +16,7 @@ export class SignupComponent implements OnInit {
 
   
 
-  constructor(private router:Router ,private apiservice:ApiService, private fb:FormBuilder) { }
+  constructor(private apiservice:ApiService, private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({

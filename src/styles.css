@@ -6,7 +6,7 @@
 
 .adminContainer{
     background-color: #e3e3e3;
-    padding: 56px 0 100% 72px;
+    padding: 56px 0 80px 72px;
     box-sizing: border-box;
 }
 
@@ -24,7 +24,7 @@
 @media (max-width: 425px){
     .adminContainer{
         background-color: #e3e3e3;
-        padding: 56px 0 0 0;
+        padding: 56px 0 136px 0;
     }
 }
 html, body { height: 100%; }

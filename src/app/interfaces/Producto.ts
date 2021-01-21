@@ -1,9 +1,15 @@
 export interface Producto{
 	_id?: string;
 	name: string;
-	status: string;
-	category: string;
-	brand: string;
+	unsubscribed: boolean;
+	category: {
+		categoryIndex:string;
+		categoryName:string;
+	};
+	brand: {
+		brandIndex:string;
+		brandName:string;
+	};
 	actualPrice: number;
 	originalPrice: number;
 	discount: number;

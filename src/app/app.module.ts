@@ -20,6 +20,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatSliderModule } from '@angular/material/slider';
 
 //-------------------------------------------------------//
@@ -44,6 +45,7 @@ import { AdminProductsListComponent } from './components/admin-products-list/adm
 import { AdminsListComponent } from './components/admins-list/admins-list.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminProductDetailsComponent } from './components/admin-product-details/admin-product-details.component';
+import { AdminProductAddComponent } from './components/admin-product-add/admin-product-add.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,8 @@ import { AdminProductDetailsComponent } from './components/admin-product-details
     AdminProductsListComponent,
     AdminsListComponent,
     AdminNavbarComponent,
-    AdminProductDetailsComponent
+    AdminProductDetailsComponent,
+    AdminProductAddComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +90,7 @@ import { AdminProductDetailsComponent } from './components/admin-product-details
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatSnackBarModule,
     MatSliderModule
     //--------------------------------------------------------//
   ],
