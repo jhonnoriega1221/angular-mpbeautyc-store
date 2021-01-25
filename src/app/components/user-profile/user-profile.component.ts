@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
 
 import { Usuario } from '../../interfaces/Usuario';
@@ -13,10 +13,13 @@ export class UserProfileComponent implements OnInit {
 
   usuario:Usuario;
 
-  constructor(private router:Router ,private apiService:ApiService) { }
+  constructor(
+    private router:Router,
+    private usuarioService:UsuarioService
+    ) { }
 
   ngOnInit(): void {
-    this.apiService.getUsuario().subscribe(
+    this.usuarioService.getUsuario().subscribe(
       res =>{
         this.usuario = res;
       },

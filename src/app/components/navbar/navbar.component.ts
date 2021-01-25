@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { AuthService } from '../../auth/auth.service';
-import { ApiService } from '../../services/api.service';
+import { UsuarioService } from '../../services/usuario.service';
 import { NavbarService } from '../../services/navbar.service';
 
 
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   query:string;
 
   constructor(
-    private apiService:ApiService,
+    private usuarioService:UsuarioService,
     private authService:AuthService,
     private router:Router, 
     public nav:NavbarService
@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
 
     this.auth = this.authService.isAuthenticated();
     if(this.auth)
-      this.apiService.getUsuario().subscribe(
+      this.usuarioService.getUsuario().subscribe(
         res =>{
           this.userName = res.name;
         },

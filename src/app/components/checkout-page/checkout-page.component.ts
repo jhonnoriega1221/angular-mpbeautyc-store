@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService} from '../../services/api.service';
-import {Usuario} from '../../interfaces/Usuario';
+import { UsuarioService} from '../../services/usuario.service';
+import { ShoppingcartService} from '../../services/shoppingcart.service';
+import { PedidoService} from '../../services/pedido.service';
+import { ProductoService} from '../../services/producto.service';
+
+import { Usuario } from '../../interfaces/Usuario';
 import { Router} from '@angular/router';  
 import { Route } from '@angular/compiler/src/core';
 
@@ -19,11 +23,18 @@ export class CheckoutPageComponent implements OnInit {
   quantityTotal:number = 0;
 
 
-  constructor(private apiService:ApiService, private router:Router) { }
+  constructor(
+    private usuarioService:UsuarioService,
+    private shoppingcartService:ShoppingcartService,
+    private pedidoService:PedidoService,
+    private productoService:ProductoService,
+
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
 
-    this.apiService.getUsuario().subscribe(
+    this.usuarioService.getUsuario().subscribe(
       res =>{
         this.userInfo = res;
       }, err =>{
@@ -31,12 +42,12 @@ export class CheckoutPageComponent implements OnInit {
       }
     )
 
-    this.apiService.getShoppingCart().subscribe(
+    this.shoppingcartService.getShoppingCart().subscribe(
       res =>{
         const shoppingCartProducts = res[0].products; //Me recibe la info del carrito de compras de la base de datos
 
         //Obtiene los productos correspondientes al carrito de compras
-        this.apiService.getProductos().subscribe( //Me consulta todos los productos de la base de datos
+        this.productoService.getProductos().subscribe( //Me consulta todos los productos de la base de datos
           res =>{
             for(let i=0; i<shoppingCartProducts.length;i++){
               for(let j=0; j<res.length;j++){
@@ -72,7 +83,7 @@ export class CheckoutPageComponent implements OnInit {
   }
 
   realizarPedido(){
-    this.apiService.realizarPedido(this.shippingCost,this.subtotal,this.total,this.shoppingCart).subscribe(
+    this.pedidoService.realizarPedido(this.shippingCost,this.subtotal,this.total,this.shoppingCart).subscribe(
       res =>{
         const id:any = res;
         this.router.navigate(['/profile/order/',id.pedido._id]);

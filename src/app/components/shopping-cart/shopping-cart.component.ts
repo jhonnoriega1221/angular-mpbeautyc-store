@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { ShoppingcartService } from '../../services/shoppingcart.service';
+import { ProductoService } from '../../services/producto.service';
 import { Router} from '@angular/router';
 
 import { ShoppingCart } from '../../interfaces/ShoppingCart';
@@ -19,16 +20,20 @@ export class ShoppingCartComponent implements OnInit {
   total:number;
 
 
-  constructor(private apiService:ApiService, private router:Router) { 
+  constructor(
+    private shoppingcartService:ShoppingcartService,
+    private productoService:ProductoService,
+    private router:Router
+    ) { 
   }
 
   ngOnInit(): void {
-    this.apiService.getShoppingCart().subscribe(
+    this.shoppingcartService.getShoppingCart().subscribe(
       res =>{
         const shoppingCartProducts = res[0].products; //Me recibe la info del carrito de compras de la base de datos
 
         //Obtiene los productos correspondientes al carrito de compras
-        this.apiService.getProductos().subscribe( //Me consulta todos los productos de la base de datos
+        this.productoService.getProductos().subscribe( //Me consulta todos los productos de la base de datos
           res =>{
             for(let i=0; i<shoppingCartProducts.length;i++){
               for(let j=0; j<res.length;j++){
@@ -59,7 +64,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   deleteItem(productId:string){
-    this.apiService.deleteShoppingCartitem(productId).subscribe(
+    this.shoppingcartService.deleteShoppingCartitem(productId).subscribe(
       res =>{
         window.location.reload();
       },

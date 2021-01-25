@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { PedidoService } from '../../services/pedido.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pedido } from '../../interfaces/Pedido';
 
@@ -14,12 +14,15 @@ export class OrderDetailsComponent implements OnInit {
   id:string;
   pedido:Pedido;
 
-  constructor(private apiService:ApiService, private activeRoute:ActivatedRoute) { }
+  constructor(
+    private pedidoService:PedidoService,
+    private activeRoute:ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(params =>{
       this.id = params['id']
-      this.apiService.getPedido(this.id).subscribe(
+      this.pedidoService.getPedido(this.id).subscribe(
         res =>{
           this.pedido=res;
           console.log(res);

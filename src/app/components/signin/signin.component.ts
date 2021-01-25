@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../services/api.service';
+import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,10 @@ export class SigninComponent implements OnInit {
   loginForm:FormGroup;
   submitted = false;
 
-  constructor(private router:Router ,private apiservice:ApiService ,private fb:FormBuilder) { }
+  constructor(
+    private router:Router,
+    private usuarioService:UsuarioService,
+    private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -30,7 +33,7 @@ export class SigninComponent implements OnInit {
       return;
     }
 
-    this.apiservice.loginUsuario(this.loginForm.value).subscribe(
+    this.usuarioService.loginUsuario(this.loginForm.value).subscribe(
       res =>{
         localStorage.setItem('TOKEN', res.token);
         window.location.reload();

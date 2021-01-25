@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ApiService } from '../../services/api.service';
+import { ProductoService } from '../../services/producto.service';
 
 import { Producto } from '../../interfaces/Producto';
 
@@ -15,12 +15,15 @@ export class SearchPageComponent implements OnInit {
 
   productos:Producto[] = new Array();
 
-  constructor( private apiService:ApiService, private router:Router, private activeRoute:ActivatedRoute) { }
+  constructor(
+    private productoService:ProductoService,
+    private router:Router,
+    private activeRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
       this.activeRoute.params.subscribe(params =>{
         this.query = params['query'];
-        this.apiService.searchProducto(this.query).subscribe(
+        this.productoService.searchProducto(this.query).subscribe(
           res =>{
             this.productos = res;
           },
