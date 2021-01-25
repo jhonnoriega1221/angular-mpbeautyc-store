@@ -14,7 +14,6 @@ import { Opinion } from '../../interfaces/Opinion';
 import { Pregunta } from '../../interfaces/Pregunta';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
@@ -33,9 +32,6 @@ export class ProductDetailsComponent implements OnInit {
   userId:string;
   isInCart = false;
 
-
-  
-
   constructor(
     private authService:AuthService,
     private productoService:ProductoService,
@@ -49,15 +45,11 @@ export class ProductDetailsComponent implements OnInit {
     private fb:FormBuilder
   ) {
 
-    
-
     this.question = this.fb.group({
       userQuestion: ['',[Validators.required, Validators.maxLength(150)]]
     });
 
    }
-
-   
 
   ngOnInit(): void {
    this.activeRoute.params.subscribe(params => {
@@ -80,8 +72,7 @@ export class ProductDetailsComponent implements OnInit {
                   if(res[0].products[i].productId == this.producto._id){
                     this.isInCart = true;
                     break;
-                  }
-                  
+                  } 
                 }
               },
               err =>{
@@ -118,7 +109,6 @@ export class ProductDetailsComponent implements OnInit {
           console.log(err);
         }
       );
-
      });
   }
 
@@ -136,7 +126,7 @@ export class ProductDetailsComponent implements OnInit {
         console.log(err);
       }
     )
-    
+
   }
 
   realizarPregunta(){

@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 
 import { Pedido } from '../interfaces/Pedido';
 
-
 @Injectable({
   providedIn: 'root'
 })

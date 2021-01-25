@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
 import { ProductoService } from '../../services/producto.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Producto } from 'src/app/interfaces/Producto';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 

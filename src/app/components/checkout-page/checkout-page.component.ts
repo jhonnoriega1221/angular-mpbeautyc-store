@@ -6,7 +6,6 @@ import { ProductoService} from '../../services/producto.service';
 
 import { Usuario } from '../../interfaces/Usuario';
 import { Router} from '@angular/router';  
-import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-checkout-page',

@@ -3,8 +3,8 @@ import { NavbarService } from '../../services/navbar.service';
 import { ProductoService } from '../../services/producto.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Producto } from 'src/app/interfaces/producto';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({

@@ -12,7 +12,6 @@ export class ProductoService {
 
   URI = 'http://localhost:3000/api/';
 
-
   constructor(
     private http:HttpClient
   ) { }

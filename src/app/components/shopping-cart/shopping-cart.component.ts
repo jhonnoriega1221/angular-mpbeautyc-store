@@ -3,10 +3,6 @@ import { ShoppingcartService } from '../../services/shoppingcart.service';
 import { ProductoService } from '../../services/producto.service';
 import { Router} from '@angular/router';
 
-import { ShoppingCart } from '../../interfaces/ShoppingCart';
-import { Producto } from '../../interfaces/Producto';
-import { Route } from '@angular/compiler/src/core';
-
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',

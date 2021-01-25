@@ -29,5 +29,4 @@ export class OrderListComponent implements OnInit {
   goToPedido(id:string){
     this.router.navigate(['/profile/order/',id])
   }
-
 }
