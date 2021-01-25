@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { confirmedValidator } from './confirmed.validator';
-import { ApiService } from '../../services/api.service';
+import { UserService } from '../../services/user.service';
 
 
 @Component({
@@ -14,9 +14,9 @@ export class SignupComponent implements OnInit {
   registerForm:FormGroup;
   submitted = false;
 
-  
-
-  constructor(private apiservice:ApiService, private fb:FormBuilder) { }
+  constructor(
+    private userService:UserService,
+    private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
       return;
     }
     
-  this.apiservice.registerUsuario(this.registerForm.value).subscribe(
+  this.userService.registerUsuario(this.registerForm.value).subscribe(
     res=>{
       localStorage.setItem('TOKEN', res.token);
       window.location.reload();

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../interfaces/Pedido';
-import { ApiService } from '../../services/api.service';
+import { PedidoService } from '../../services/pedido.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,10 +12,10 @@ export class OrderListComponent implements OnInit {
 
   pedidos:Pedido[] = new Array();
 
-  constructor(private apiService:ApiService, private router:Router) { }
+  constructor(private pedidoService:PedidoService, private router:Router) { }
 
   ngOnInit(): void {
-    this.apiService.getPedidosUsuario().subscribe(
+    this.pedidoService.getPedidosUsuario().subscribe(
       res=>{
         this.pedidos = res;
         console.log(this.pedidos);
@@ -26,5 +26,4 @@ export class OrderListComponent implements OnInit {
   goToPedido(id:string){
     this.router.navigate(['/profile/order/',id])
   }
-
 }

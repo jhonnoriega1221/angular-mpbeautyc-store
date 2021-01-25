@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
+import { ProductoService } from '../../services/producto.service';
 import { ApiService } from '../../services/api.service';
 
 import { Producto } from '../../interfaces/Producto';
@@ -16,15 +17,16 @@ export class AdminProductsListComponent implements OnInit {
 
   constructor(
     private nav:NavbarService,
-    private apiService:ApiService
+    private productoService:ProductoService
   ) { }
 
   ngOnInit(): void {
     
-    this.apiService.getProductos().subscribe(
+    this.productoService.getProductos().subscribe(
       res =>{
         this.productos = res;
-        console.log(this.productos)
+        console.log(res);
+        
       }, err =>{
         console.log(err);
       }

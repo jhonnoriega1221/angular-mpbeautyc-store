@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
-import { ApiService } from '../../services/api.service';
+import { ProductoService } from '../../services/producto.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Producto } from 'src/app/interfaces/producto';
-import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -36,7 +36,7 @@ export class AdminProductDetailsComponent implements OnInit {
 
   constructor(
     public nav:NavbarService,
-    private apiService:ApiService,
+    private productoService:ProductoService,
     private activeRoute:ActivatedRoute,
     private fb:FormBuilder,
     private snackbar:MatSnackBar
@@ -46,7 +46,7 @@ export class AdminProductDetailsComponent implements OnInit {
 
     this.activeRoute.params.subscribe( params =>{
       this.id = params['id'];
-      this.apiService.getProducto(this.id).subscribe(
+      this.productoService.getProducto(this.id).subscribe(
         res =>{
           this.producto = res;
           this.productForm = this.fb.group({
@@ -79,7 +79,7 @@ export class AdminProductDetailsComponent implements OnInit {
   }
 
   modifyProduct(){
-    this.apiService.updateProducto(this.id,this.productForm.value,this.marcas[this.productForm.value.productBrand].view,this.categorias[this.productForm.value.productBrand].view).subscribe(
+    this.productoService.updateProducto(this.id,this.productForm.value,this.marcas[this.productForm.value.productBrand].view,this.categorias[this.productForm.value.productBrand].view).subscribe(
       res =>{
         this.ngOnInit();
         this.snackbar.open('Producto actualizado',null,{
@@ -95,7 +95,7 @@ export class AdminProductDetailsComponent implements OnInit {
   }
 
   unsubscribeProduct(){
-    this.apiService.unsubscribeProduct(this.id).subscribe(
+    this.productoService.unsubscribeProduct(this.id).subscribe(
       res =>{
         this.ngOnInit();
         this.snackbar.open('Producto dado de baja',null,{
@@ -110,7 +110,7 @@ export class AdminProductDetailsComponent implements OnInit {
   }
 
   subscribeProduct(){
-    this.apiService.subscribeProduct(this.id).subscribe(
+    this.productoService.subscribeProduct(this.id).subscribe(
       res =>{
         this.ngOnInit();
         this.snackbar.open('Producto puesto en venta',null,{

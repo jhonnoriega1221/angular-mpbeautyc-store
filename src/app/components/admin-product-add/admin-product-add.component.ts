@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
-import { ApiService } from '../../services/api.service';
+import { ProductoService } from '../../services/producto.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Producto } from 'src/app/interfaces/Producto';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -36,7 +35,7 @@ export class AdminProductAddComponent implements OnInit {
 
   constructor(
     public nav:NavbarService,
-    private apiService:ApiService,
+    private productoService:ProductoService,
     private fb:FormBuilder,
     private snackbar:MatSnackBar,
     private router:Router
@@ -72,7 +71,7 @@ export class AdminProductAddComponent implements OnInit {
 }
 
   addProduct(){
-    this.apiService.createProducto(this.productForm.value,this.marcas[this.productForm.value.productBrand].view,this.categorias[this.productForm.value.productBrand].view, this.file).subscribe(
+    this.productoService.createProducto(this.productForm.value,this.marcas[this.productForm.value.productBrand].view,this.categorias[this.productForm.value.productBrand].view, this.file).subscribe(
       res =>{
         console.log(res);
         this.snackbar.open('Producto registrado',null,{

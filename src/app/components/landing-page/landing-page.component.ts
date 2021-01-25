@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { ProductoService } from '../../services/producto.service';
 import { Producto } from '../../interfaces/Producto';
 import { Router } from '@angular/router';
 
@@ -16,7 +16,7 @@ export class LandingPageComponent implements OnInit {
 
 
   constructor(
-    public apiService:ApiService,
+    public productoService:ProductoService,
     public router:Router
     ) { }
 
@@ -26,7 +26,7 @@ export class LandingPageComponent implements OnInit {
 
     //ULTIMOS PRODUCTOS       
 
-    this.apiService.getProductos().subscribe(
+    this.productoService.getProductos().subscribe(
       res => {
         if(res.length > 4)
           this.productosNuevos = res.splice(0,4);
@@ -42,7 +42,7 @@ export class LandingPageComponent implements OnInit {
     );
 
     //OFERTA
-    this.apiService.getProductos().subscribe(
+    this.productoService.getProductos().subscribe(
       res => {
 
         res.sort((a,b) =>{
@@ -62,7 +62,7 @@ export class LandingPageComponent implements OnInit {
     );
 
     //MAS VENDI2
-    this.apiService.getProductos().subscribe(
+    this.productoService.getProductos().subscribe(
       res => {
         res.sort(function(a,b){ return (b.soldTimes - a.soldTimes)});
 

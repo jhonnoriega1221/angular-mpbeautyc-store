@@ -1,3 +1,5 @@
+import { WishList } from './WishList';
+
 export interface Usuario{
     _id?: string;
     email:string;
@@ -9,4 +11,5 @@ export interface Usuario{
     country:string;
     city:string;
     phoneNumber:string;
+    wishList:WishList[];
 }
