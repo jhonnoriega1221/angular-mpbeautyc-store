@@ -28,6 +28,14 @@
     top: 26px;
 }
 
+.line .active{
+    background-color: #4CAF50;
+}
+
+.line .cancel{
+    background-color: #f44336;
+}
+
 .progressBar i{
     background-color: #c3c3c3;
     font-size: 22px;
@@ -43,6 +51,11 @@
 .progressBar .active{
     background-color: #4CAF50;
 }
+
+.progressBar .cancel{
+    background-color: #f44336;
+}
+
 
 .bubbleTitle{
     display: block;

@@ -1,0 +1,24 @@
+.cardLogin{
+    margin: 100px 5px 0 5px;
+}
+
+.cardHeader{
+    padding: 10px 0;
+}
+
+.form{
+    width: 100%;
+    display: inline-block;
+}
+
+.btnLogin{
+    margin-left: auto;
+    display: block;
+}
+
+@media (min-width: 426px){
+    .cardLogin{
+        margin: 100px auto 0 auto;
+        max-width: 355px;
+    }
+}

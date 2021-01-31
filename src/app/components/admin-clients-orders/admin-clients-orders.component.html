@@ -1,0 +1,22 @@
+<mat-list *ngIf="pedidos; else noPedidos">
+    <!--Pedido item-->
+    <mat-list-item [routerLink]="['/admin/clients/order',pedido._id]" *ngFor="let pedido of pedidos" matRipple>
+         <mat-icon mat-list-icon>account_circle</mat-icon>
+         <h3 mat-line >{{pedido.userData[0].name}} {{pedido.userData[0].surname}} - {{pedido.createdAt}}</h3>
+         <p mat-line>
+             <span>	{{pedido.products[0].productName}}</span>
+         </p>
+         <p *ngIf="pedido.products.length > 1" mat-line>
+             <span>	{{pedido.products[1].productName}}</span>
+         </p>
+         <p *ngIf="pedido.products.length > 2" mat-line>
+            <span>y {{pedido.products.length-2}} más</span>
+        </p>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+    <!--Fin pedido item-->
+</mat-list>
+
+<ng-template #noPedidos>
+    <p>No hay pedidos realizados</p>
+</ng-template>

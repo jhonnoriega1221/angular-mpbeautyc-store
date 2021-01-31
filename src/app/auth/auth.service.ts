@@ -6,22 +6,38 @@ import { JwtHelperService } from '@auth0/angular-jwt'
 })
 export class AuthService {
 
-  adminMode = true;
-
   constructor(private jwtHelper:JwtHelperService) { }
 
   public isAuthenticated():boolean {
     const token = localStorage.getItem('TOKEN');
-    return !this.jwtHelper.isTokenExpired(token);
+
+    if(token == undefined)
+      return false
+    
+    if(this.jwtHelper.isTokenExpired(token))
+      return false;
+    else
+      if(this.jwtHelper.decodeToken(token).isAdmin!=undefined)
+        return false
+      else
+        return true
+
   }
 
-  public setAdminMode(adminMode:boolean):boolean{
-    console.log(adminMode);
-    return this.adminMode = adminMode;
+  public isAuthenticatedAdmin():boolean {
+    const token = localStorage.getItem('TOKEN');
+
+    if(token == undefined)
+      return false
+    
+    if(this.jwtHelper.isTokenExpired(token))
+      return false;
+    else
+      if(this.jwtHelper.decodeToken(token).isAdmin)
+        return true
+      else
+        return false
+
   }
 
-  public getAdminMode():boolean{
-    console.log(this.adminMode);
-    return this.adminMode;
-  }
 }

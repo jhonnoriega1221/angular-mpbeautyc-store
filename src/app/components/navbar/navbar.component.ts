@@ -4,7 +4,6 @@ import { AuthService } from '../../auth/auth.service';
 import { UsuarioService } from '../../services/usuario.service';
 import { NavbarService } from '../../services/navbar.service';
 
-
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -30,7 +29,7 @@ export class NavbarComponent implements OnInit {
 
     this.auth = this.authService.isAuthenticated();
     if(this.auth)
-      this.usuarioService.getUsuario().subscribe(
+      this.usuarioService.getUsuarioLogued().subscribe(
         res =>{
           this.userName = res.name;
         },

@@ -14,10 +14,6 @@ export class PedidoService {
     private http:HttpClient
   ) { }
 
-  deleteShoppingCartitem(productId:string){
-    return this.http.delete(this.URI + "shoppingcart/" +productId);
-  }
-
   //-----------------PEDIDOS---------------------//
   realizarPedido(shippingCost:number, subtotal:number, total:number, shoppingCart:any[]){
     const newPedido = {
@@ -31,11 +27,19 @@ export class PedidoService {
     return this.http.post(this.URI + "pedido",newPedido); 
   }
 
+  getPedidos(){
+    return this.http.get<Pedido[]>(this.URI+"pedido");
+  }
+
   getPedido(id:string){
-    return this.http.get<Pedido>(this.URI+"pedido/"+id);
+    return this.http.get<Pedido[]>(this.URI+"pedido/"+id);
   }
 
   getPedidosUsuario(){
     return this.http.get<Pedido[]>(this.URI+"pedido/user");
+  }
+
+  cancelPedido(pedidoId:string){
+    return this.http.delete(this.URI+"pedido/"+pedidoId);
   }
 }

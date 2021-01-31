@@ -45,7 +45,6 @@ export class ShoppingCartComponent implements OnInit {
                     productTotal: shoppingCartProducts[i].quantity*res[j].actualPrice,
                   });
                   this.subtotal += this.shoppingCart[i].productTotal;
-                  console.log(this.shoppingCart)
                 }
                 //OPTIMIZAR PETICIONES HTTP
               }

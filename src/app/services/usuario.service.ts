@@ -39,15 +39,19 @@ export class UsuarioService {
       "password": formData.password
     }
 
-    return this.http.post<TokenResponse>(this.URI+"auth/login",userData);
+    return this.http.post<TokenResponse>(this.URI+"user/login",userData);
   }
 
   //_________________________________________________END AUTH RELATED_____________________________________________________
 
   //--------------Obtener datos usuario-----------------//
 
-  getUsuario(){
+  getUsuarioLogued(){
     return this.http.get<Usuario>(this.URI+"user");
+  }
+
+  getUsuario(id:string){
+    return this.http.get<Usuario>(this.URI+'user/' +id)
   }
 
 }

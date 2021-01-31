@@ -19,7 +19,7 @@ export class UserProfileComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.usuarioService.getUsuario().subscribe(
+    this.usuarioService.getUsuarioLogued().subscribe(
       res =>{
         this.usuario = res;
       },

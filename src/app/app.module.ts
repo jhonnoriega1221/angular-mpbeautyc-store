@@ -21,6 +21,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCardModule} from '@angular/material/card';
+import {MatTabsModule} from '@angular/material/tabs';
 import { MatSliderModule } from '@angular/material/slider';
 
 //-------------------------------------------------------//
@@ -46,6 +48,10 @@ import { AdminsListComponent } from './components/admins-list/admins-list.compon
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminProductDetailsComponent } from './components/admin-product-details/admin-product-details.component';
 import { AdminProductAddComponent } from './components/admin-product-add/admin-product-add.component';
+import { AdminClientsTabsComponent } from './components/admin-clients-tabs/admin-clients-tabs.component';
+import { AdminClientsOrdersComponent } from './components/admin-clients-orders/admin-clients-orders.component';
+import { AdminClientsQuestionsComponent } from './components/admin-clients-questions/admin-clients-questions.component';
+import { AdminClientsOrderDetailsComponent } from './components/admin-clients-order-details/admin-clients-order-details.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +74,11 @@ import { AdminProductAddComponent } from './components/admin-product-add/admin-p
     AdminsListComponent,
     AdminNavbarComponent,
     AdminProductDetailsComponent,
-    AdminProductAddComponent
+    AdminProductAddComponent,
+    AdminClientsTabsComponent,
+    AdminClientsOrdersComponent,
+    AdminClientsQuestionsComponent,
+    AdminClientsOrderDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -91,6 +101,8 @@ import { AdminProductAddComponent } from './components/admin-product-add/admin-p
     MatInputModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatCardModule,
+    MatTabsModule,
     MatSliderModule
     //--------------------------------------------------------//
   ],

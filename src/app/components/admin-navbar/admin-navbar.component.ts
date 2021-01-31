@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ NavbarService } from '../../services/navbar.service';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-admin-navbar',
@@ -9,7 +10,9 @@ import{ NavbarService } from '../../services/navbar.service';
 export class AdminNavbarComponent implements OnInit {
 
   constructor(
-    public nav:NavbarService) { }
+    public nav:NavbarService,
+    public authService:AuthService
+    ) { }
 
   ngOnInit(): void {
   }

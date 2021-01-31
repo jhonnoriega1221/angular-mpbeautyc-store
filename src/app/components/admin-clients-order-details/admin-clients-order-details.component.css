@@ -1,0 +1,8 @@
+.imageAndName{
+    display: flex;
+}
+
+mat-icon{
+    font-size:40px;
+}
+

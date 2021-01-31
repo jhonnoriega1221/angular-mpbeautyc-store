@@ -15,7 +15,7 @@ export class PreguntaService {
   ) { }
 
   getPreguntas(productoId:string){
-    return this.http.get<Pregunta[]>(this.URI + "pregunta/"+productoId);
+    return this.http.get<Pregunta[]>(this.URI + "producto/"+productoId+"/pregunta");
 }
 
 realizarPregunta(userId:string, productoId:string,question:string){
@@ -25,6 +25,6 @@ realizarPregunta(userId:string, productoId:string,question:string){
     "preguntaUsuario": question,
     "respuesta": ''
   }
-  return this.http.post<Pregunta>(this.URI + "pregunta", newPregunta);
+  return this.http.post<Pregunta>(this.URI + "producto/"+productoId+"/pregunta", newPregunta);
 }
 }

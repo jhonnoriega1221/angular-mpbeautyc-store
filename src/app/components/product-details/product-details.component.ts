@@ -86,10 +86,12 @@ export class ProductDetailsComponent implements OnInit {
         }
       );
 
-      this.usuarioService.getUsuario().subscribe(
-        res => this.userId = res._id,
-        err => console.log(err)
-      )
+      if(this.auth){
+        this.usuarioService.getUsuarioLogued().subscribe(
+          res => this.userId = res._id,
+          err => console.log(err)
+        )
+      }
 
       //Preguntas
       this.preguntaService.getPreguntas(this.id).subscribe(

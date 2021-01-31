@@ -15,11 +15,17 @@ import { OrderListComponent } from './components/order-list/order-list.component
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
 import { AdminProductDetailsComponent } from './components/admin-product-details/admin-product-details.component';
 import { AdminProductAddComponent } from './components/admin-product-add/admin-product-add.component';
+import { AdminClientsTabsComponent } from './components/admin-clients-tabs/admin-clients-tabs.component';
+import {AdminClientsOrderDetailsComponent } from './components/admin-clients-order-details/admin-clients-order-details.component';
+
 
 
 
 import { AuthGuardService as AuthGuard } from './auth/auth-guard.service';
 import { NoAuthService as NoAuthGuard } from './auth/no-auth-guard.service';
+import { AuthAdminGuardGuard as AuthAdminGuard } from './auth/auth-admin-guard.guard';
+import { NoAuthAdminGuardGuard as NoAuthAdminGuard } from './auth/no-auth-admin-guard.guard';
+
 
 
 const routes: Routes = [
@@ -34,12 +40,15 @@ const routes: Routes = [
   { path: 'checkout', component:CheckoutPageComponent, canActivate:[AuthGuard]},
   { path: 'profile/order', component:OrderListComponent, canActivate:[AuthGuard]},
   { path: 'profile/order/:id', component:OrderDetailsComponent, canActivate:[AuthGuard]},
-  { path: 'admin', redirectTo:'admin/dashboard', pathMatch:  'full' },
-  { path: 'admin/dashboard', component:AdminDashboardComponent},
-  { path: 'admin/signin', component: AdminLoginComponent},
-  { path: 'admin/products', component: AdminProductsListComponent},
-  { path: 'admin/products/product/:id', component: AdminProductDetailsComponent},
-  { path: 'admin/products/add', component: AdminProductAddComponent}
+  { path: 'admin', component:AdminLoginComponent, canActivate: [NoAuthAdminGuard]},
+  { path: 'admin/dashboard', component:AdminDashboardComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/products', component: AdminProductsListComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/products/product/:id', component: AdminProductDetailsComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/clients', component: AdminClientsTabsComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/clients/order/:id', component: AdminClientsOrderDetailsComponent, canActivate: [AuthAdminGuard]}
+
+
 ];
 
 @NgModule({
