@@ -8,8 +8,15 @@
         <div class="right_area">
 
             <button class="toolbarButton" mat-icon-button><mat-icon>notifications</mat-icon> </button>
-            <button class="toolbarButton" mat-icon-button><mat-icon>person</mat-icon> </button>
+            <button class="toolbarButton" mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>person</mat-icon> </button>
             
+            <mat-menu #menu="matMenu">
+                <button (click)="logOut()" mat-menu-item>
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Cerrar sesión</span>
+                  </button>
+            </mat-menu>
+
            <!-- <button class="top__button"><i class="material-icons">notifications</i></button>
             <button class="top__button"><img class="profile" src="img/user.png" alt=""></button>-->
         </div>
@@ -28,7 +35,7 @@
         <a mat-ripple href="#" class="nav__link"><mat-icon>trending_up</mat-icon>
             <span class="nav__text">Ventas</span>
         </a>
-        <a mat-ripple href="#" class="nav__link"><mat-icon>admin_panel_settings</mat-icon>
+        <a mat-ripple routerLink="/admin/settings" class="nav__link" routerLinkActive="nav__link--active"><mat-icon>admin_panel_settings</mat-icon>
             <span class="nav__text">Ajustes</span>
         </a>
     </nav>

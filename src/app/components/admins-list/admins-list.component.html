@@ -1,1 +1,18 @@
-<p>admins-list works!</p>
+<div class="adminContainer">
+    <mat-list>
+        <mat-list-item mat-ripple *ngFor="let admin of admins">
+            <mat-icon mat-list-icon>person</mat-icon>
+            <h2 mat-line><b>{{admin.adminName}}</b></h2>
+            <span mat-line>{{admin.adminEmail}}</span>
+            <div class="buttonRow">
+                <button mat-icon-button color="primary" aria-label="edit-icon">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" aria-label="delete-icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</div>

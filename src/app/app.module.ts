@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatMenuModule} from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 
 //-------------------------------------------------------//
@@ -52,6 +53,8 @@ import { AdminClientsTabsComponent } from './components/admin-clients-tabs/admin
 import { AdminClientsOrdersComponent } from './components/admin-clients-orders/admin-clients-orders.component';
 import { AdminClientsQuestionsComponent } from './components/admin-clients-questions/admin-clients-questions.component';
 import { AdminClientsOrderDetailsComponent } from './components/admin-clients-order-details/admin-clients-order-details.component';
+import { AdminClientsQuestionsDetailsComponent } from './components/admin-clients-questions-details/admin-clients-questions-details.component';
+import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +81,9 @@ import { AdminClientsOrderDetailsComponent } from './components/admin-clients-or
     AdminClientsTabsComponent,
     AdminClientsOrdersComponent,
     AdminClientsQuestionsComponent,
-    AdminClientsOrderDetailsComponent
+    AdminClientsOrderDetailsComponent,
+    AdminClientsQuestionsDetailsComponent,
+    AdminSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -103,6 +108,7 @@ import { AdminClientsOrderDetailsComponent } from './components/admin-clients-or
     MatSnackBarModule,
     MatCardModule,
     MatTabsModule,
+    MatMenuModule,
     MatSliderModule
     //--------------------------------------------------------//
   ],

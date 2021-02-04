@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Admin } from 'src/app/interfaces/Admin';
+import { AdminService } from '../../services/admin.service';
+import { NavbarService } from '../../services/navbar.service';
 
 @Component({
   selector: 'app-admins-list',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminsListComponent implements OnInit {
 
-  constructor() { }
+  admins:Admin[];
+
+  constructor(
+    private adminService:AdminService,
+    public nav:NavbarService
+  ) { }
 
   ngOnInit(): void {
+    this.adminService.getAdmins().subscribe(
+      res =>{
+        this.admins = res;
+      }, err =>{
+        console.log(err);
+      }
+    )
+    this.nav.show();
   }
 
 }

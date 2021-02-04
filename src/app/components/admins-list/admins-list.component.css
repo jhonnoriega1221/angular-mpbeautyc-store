@@ -1,0 +1,7 @@
+mat-list-item:hover button{
+    display: inline;
+}
+
+button{
+    display: none;
+}

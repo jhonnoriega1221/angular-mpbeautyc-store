@@ -1,0 +1,70 @@
+.questionHeader{
+    background-color: #fff;
+    display: flex;
+    min-height: 48px;
+    max-height: 70px;
+    padding: 6px;
+    box-sizing: border-box;
+}
+
+.productImg{
+    display: block;
+    width: 38px;
+    margin-right: 10px;
+}
+
+.productImg img{
+    width: 38px;
+    border-radius: 25px;
+}
+
+.productName{
+    font-size: 16px;
+    align-self: center;
+    margin: 0;
+}
+
+.questionBubble{
+    margin: 15px 0 0 0;
+    padding: 10px;
+    background-color: #3f51b5;
+    color: #fff;
+    max-width: 50%;
+    border-radius: 10px;
+}
+
+.clientIcon{
+    display: unset;
+    position: relative;
+    margin-top: auto;
+    margin-left: 10px;
+}
+
+.clientQuestionBubblePhoto{
+    display: flex;
+}
+
+.answerBox{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 90%;
+}
+
+.answerSection{
+    display: flex;
+    margin:10px;
+}
+
+.answerButton{
+    margin-left: 10px;
+}
+
+.employeeAnswerBubble{
+    margin: 15px 10px 0 auto;
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    max-width: 50%;
+    border-radius: 10px;
+    text-align: right;
+    display: table;
+}

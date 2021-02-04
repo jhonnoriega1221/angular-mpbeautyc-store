@@ -51,4 +51,5 @@ export class NavbarComponent implements OnInit {
     window.location.reload();
   }
 
+
 }

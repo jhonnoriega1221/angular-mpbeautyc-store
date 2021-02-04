@@ -1,0 +1,28 @@
+<div *ngIf="pregunta" class="adminContainer">
+    <div class="questionHeader">
+        <div class="productImg">
+            <img src="{{pregunta.productoData[0].imgUrl}}" alt="">
+        </div>
+        <p class="productName">{{pregunta.productoData[0].name}}</p>
+    </div>
+    <div class="clientQuestionBubblePhoto">
+        <div class="clientIcon">
+            <mat-icon>account_circle</mat-icon>
+        </div>
+        <p class="questionBubble">
+            {{pregunta.preguntaUsuario}}
+        </p>
+    </div>
+    <p class="employeeAnswerBubble">
+        {{pregunta.respuesta}}
+    </p>
+    <form class="answerSection" [formGroup]="answerForm" (ngSubmit)="responderPregunta()">
+        <mat-form-field class="answerBox" appearance="outline">
+            <mat-label>Responder...</mat-label>
+            <textarea matInput formControlName="questionAnswer"></textarea>
+        </mat-form-field>        
+        <button type="submit" class="answerButton" mat-fab color="primary">
+            <mat-icon>send</mat-icon>
+        </button>
+    </form>
+</div>

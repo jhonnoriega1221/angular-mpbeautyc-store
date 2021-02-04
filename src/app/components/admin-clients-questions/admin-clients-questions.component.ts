@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavbarService } from 'src/app/services/navbar.service';
+import { PreguntaService } from '../../services/pregunta.service';
+import { Pregunta } from '../../interfaces/Pregunta';
 
 @Component({
   selector: 'app-admin-clients-questions',
@@ -8,11 +10,22 @@ import { NavbarService } from 'src/app/services/navbar.service';
 })
 export class AdminClientsQuestionsComponent implements OnInit {
 
+  preguntas:Pregunta[];
+
   constructor(
-    private nav:NavbarService
+    private nav:NavbarService,
+    private preguntaService:PreguntaService
   ) { }
 
   ngOnInit(): void {
+    
+    this.preguntaService.getPreguntas().subscribe(
+      res =>{
+        this.preguntas = res;
+      }, err =>{
+        console.log(err);
+      }
+    )
 
     this.nav.show();
   }

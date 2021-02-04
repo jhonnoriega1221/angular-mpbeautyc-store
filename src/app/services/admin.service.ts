@@ -22,4 +22,25 @@ export class AdminService {
     }
     return this.http.post<TokenResponse>(this.URI+"admin/login", adminData);
   }
+
+  addAdmin(formData:any){
+    const adminData={
+      "adminEmail": formData.adminEmail,
+      "adminPassword": formData.adminPassword,
+      "adminName": formData.adminName
+    }
+    return this.http.post(this.URI+"admin/admin",adminData);
+  }
+  
+  getAdminLogued(adminId:string){
+    return this.http.get<Admin>(this.URI+"admin/admin/"+adminId);
+  }
+
+  getAdmins(){
+    return this.http.get<Admin[]>(this.URI+"admin/admin");
+  }
+
+  deleteAdmin(adminId:string){
+    return this.http.delete(this.URI+"admin/admin/"+adminId);
+  }
 }

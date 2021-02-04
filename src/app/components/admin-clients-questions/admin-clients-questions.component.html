@@ -1,1 +1,24 @@
-<p>admin-clients-questions works!</p>
+<mat-list *ngIf="preguntas; else noPreguntas">
+    <!--Pregunta item-->
+    <mat-list-item [routerLink]="['/admin/clients/question',pregunta._id]" *ngFor="let pregunta of preguntas" matRipple>
+         <mat-icon mat-list-icon>account_circle</mat-icon>
+         <h3 mat-line >{{pregunta.productoData[0].name}} - {{pregunta.userData[0].name}} {{pregunta.userData[0].surname}}</h3>
+         <p mat-line>
+             <span>	{{pregunta.preguntaUsuario}}</span>
+         </p>
+         <p *ngIf="pregunta.respuesta != ''; else noRespuesta" mat-line>
+             <span>	{{pregunta.respuesta}}</span>
+         </p>
+         <ng-template #noRespuesta>
+            <p mat-line>
+                <span class="noAnswer">Sin responder</span>
+            </p>
+         </ng-template>
+        <mat-divider></mat-divider>
+    </mat-list-item>
+    <!--Fin pregunta item-->
+</mat-list>
+
+<ng-template #noPreguntas>
+    <p>No hay preguntas realizados</p>
+</ng-template>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarService } from '../../services/navbar.service';
 import { AdminService } from '../../services/admin.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -12,11 +13,11 @@ export class AdminLoginComponent implements OnInit {
 
   adminLoginForm:FormGroup;
 
-
   constructor(
     public nav:NavbarService,
     private fb:FormBuilder,
-    private adminService:AdminService
+    private adminService:AdminService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {

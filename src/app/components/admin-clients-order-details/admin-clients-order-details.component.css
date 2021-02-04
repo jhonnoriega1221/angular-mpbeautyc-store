@@ -3,6 +3,20 @@
 }
 
 mat-icon{
-    font-size:40px;
+    font-size:56px;
+    width: 60px;
 }
 
+.subtitle{
+    display: block;
+    color:rgba(0,0,0,.54);
+
+}
+
+.subContainer{
+    max-width: 1000px;
+}
+
+.spanText{
+    color:rgba(0,0,0,.54);
+}

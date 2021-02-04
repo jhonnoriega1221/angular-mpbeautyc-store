@@ -94,7 +94,7 @@ export class ProductDetailsComponent implements OnInit {
       }
 
       //Preguntas
-      this.preguntaService.getPreguntas(this.id).subscribe(
+      this.preguntaService.getPreguntasProducto(this.id).subscribe(
         res =>{
           this.preguntas = res;
         },

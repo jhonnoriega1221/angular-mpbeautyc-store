@@ -1,6 +1,24 @@
 <div class="adminContainer">
-    <div class="imageAndName">
-        <mat-icon>account_circle</mat-icon>
-        <h3 class="name">Jhon Noriega</h3>
+    <div *ngIf="pedido" class="subContainer">
+        <div class="imageAndName">
+            <mat-icon>account_circle</mat-icon>
+            <h3 class="name">{{pedido.userData[0].name}} {{pedido.userData[0].surname}} - {{pedido.createdAt}}
+                <span class="subtitle">Detalles del pedido</span>
+            </h3>
+        </div>
+        <span class="spanText">Id del pedido</span>
+        <p>{{pedido._id}}</p>
+        <span class="spanText">Estado</span>
+        <p>{{pedido.status}}</p>
+        <span class="spanText">Total a pagar</span>
+        <p>${{pedido.netTotal}} COP</p>
+        <h3><b>Lista de productos</b></h3>
+        <p *ngFor="let producto of pedido.products">
+            {{producto.productName}} - x{{producto.quantity}}
+            <mat-divider></mat-divider>
+        </p>
+        <button *ngIf="pedido.status != 'Cancelado' && pedido.status != 'Entregado'" (click)="updatePedido('Pedido actualizado')" mat-raised-button color="primary">Atender pedido</button>
+        <button *ngIf="pedido.status != 'Cancelado' && pedido.status != 'Entregado'" (click)="cancelPedido('Pedido cancelado')" mat-raised-button color="warn">Cancelar pedido</button>
+
     </div>
 </div>

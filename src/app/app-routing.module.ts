@@ -16,7 +16,10 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
 import { AdminProductDetailsComponent } from './components/admin-product-details/admin-product-details.component';
 import { AdminProductAddComponent } from './components/admin-product-add/admin-product-add.component';
 import { AdminClientsTabsComponent } from './components/admin-clients-tabs/admin-clients-tabs.component';
-import {AdminClientsOrderDetailsComponent } from './components/admin-clients-order-details/admin-clients-order-details.component';
+import { AdminClientsOrderDetailsComponent } from './components/admin-clients-order-details/admin-clients-order-details.component';
+import { AdminClientsQuestionsDetailsComponent } from './components/admin-clients-questions-details/admin-clients-questions-details.component';
+import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+import { AdminsListComponent} from './components/admins-list/admins-list.component';
 
 
 
@@ -46,7 +49,11 @@ const routes: Routes = [
   { path: 'admin/products/product/:id', component: AdminProductDetailsComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/products/add', component: AdminProductAddComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/clients', component: AdminClientsTabsComponent, canActivate: [AuthAdminGuard]},
-  { path: 'admin/clients/order/:id', component: AdminClientsOrderDetailsComponent, canActivate: [AuthAdminGuard]}
+  { path: 'admin/clients/order/:id', component: AdminClientsOrderDetailsComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/clients/question/:id', component: AdminClientsQuestionsDetailsComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/settings', component: AdminSettingsComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/settings/admin_manager', component: AdminsListComponent, canActivate: [AuthAdminGuard]}
+
 
 
 ];

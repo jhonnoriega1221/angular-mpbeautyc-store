@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Pedido } from '../interfaces/Pedido';
+import { NonNullAssert } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,9 @@ export class PedidoService {
 
   cancelPedido(pedidoId:string){
     return this.http.delete(this.URI+"pedido/"+pedidoId);
+  }
+
+  updatePedido(pedidoId:string){
+    return this.http.put(this.URI+"pedido/"+pedidoId, null);
   }
 }
