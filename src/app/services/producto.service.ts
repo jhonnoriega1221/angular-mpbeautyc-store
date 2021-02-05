@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Producto } from '../interfaces/producto';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -10,7 +11,7 @@ import { Producto } from '../interfaces/producto';
 })
 export class ProductoService {
 
-  URI = 'http://localhost:3000/api/';
+  URI = environment.URI;
 
   constructor(
     private http:HttpClient

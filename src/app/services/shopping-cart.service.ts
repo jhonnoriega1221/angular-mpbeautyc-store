@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { ShoppingCart } from '../interfaces/ShoppingCart';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingCartService {
 
-  URI = 'http://localhost:3000/api/';
+  URI = environment.URI;
 
   constructor(
     private http:HttpClient

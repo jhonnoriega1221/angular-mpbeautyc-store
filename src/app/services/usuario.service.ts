@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 
 import { Usuario } from '../interfaces/Usuario';
 import { TokenResponse } from '../interfaces/TokenResponse';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  URI = 'http://localhost:3000/api/';
+  URI = environment.URI;
 
   constructor(
     private http:HttpClient

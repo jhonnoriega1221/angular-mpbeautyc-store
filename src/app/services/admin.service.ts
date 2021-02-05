@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 
 import { TokenResponse } from '../interfaces/TokenResponse';
 import { Admin }  from '../interfaces/Admin' ;
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
-  URI = 'http://localhost:3000/api/';
+  URI = environment.URI;
 
   constructor(
     private http:HttpClient
