@@ -20,6 +20,8 @@ import { AdminClientsOrderDetailsComponent } from './components/admin-clients-or
 import { AdminClientsQuestionsDetailsComponent } from './components/admin-clients-questions-details/admin-clients-questions-details.component';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 import { AdminsListComponent} from './components/admins-list/admins-list.component';
+import { AdminAdminAddComponent } from './components/admin-admin-add/admin-admin-add.component';
+import { AdminAdminDetailsComponent } from './components/admin-admin-details/admin-admin-details.component';
 
 
 
@@ -52,7 +54,10 @@ const routes: Routes = [
   { path: 'admin/clients/order/:id', component: AdminClientsOrderDetailsComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/clients/question/:id', component: AdminClientsQuestionsDetailsComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/settings', component: AdminSettingsComponent, canActivate: [AuthAdminGuard]},
-  { path: 'admin/settings/admin_manager', component: AdminsListComponent, canActivate: [AuthAdminGuard]}
+  { path: 'admin/settings/admin_manager', component: AdminsListComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/settings/admin_manager/add', component: AdminAdminAddComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/settings/admin_manager/:id', component: AdminAdminDetailsComponent, canActivate: [AuthAdminGuard]}
+
 
 
 

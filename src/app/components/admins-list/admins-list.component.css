@@ -1,7 +1,13 @@
-mat-list-item:hover button{
+mat-list-item:hover .actionButton{
     display: inline;
 }
 
-button{
+.actionButton{
     display: none;
+}
+
+.addButton{
+	position: fixed;
+    bottom: 74px;
+    right: 18px;
 }

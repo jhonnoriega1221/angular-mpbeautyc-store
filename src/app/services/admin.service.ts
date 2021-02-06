@@ -26,7 +26,7 @@ export class AdminService {
 
   addAdmin(formData:any){
     const adminData={
-      "adminEmail": formData.adminEmail,
+      "adminEmail": formData.adminMail,
       "adminPassword": formData.adminPassword,
       "adminName": formData.adminName
     }

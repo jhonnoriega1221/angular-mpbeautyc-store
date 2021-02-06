@@ -1,6 +1,6 @@
 <div class="orderListContainer">
     <div *ngIf="pedidos" class="pendingOrders">
-        <h2 class="title">Pedidos pendientes (2)</h2>
+        <h2 class="title">Pedidos ({{pedidos.length}})</h2>
         <!--Item de orden pendiente-->
         <a *ngFor="let pedido of pedidos" (click)="goToPedido(pedido._id)" class="orderItem">
             <span class="orderDate">realizado el {{pedido.createdAt}}</span>
@@ -31,68 +31,6 @@
         </a>
         <!--Fin de item de orden pendiente-->
     </div>
-    <div class="historyOrders">
-        <h2 class="title">Historial de pedidos</h2>
-
-        <!--Item de orden entregado-->
-        <a href="#" class="orderItem">
-            <span class="orderDate"> entregado el 12/12/12</span>
-            <div class="imgAndInfo">
-                <div class="imgBox">
-                    <img src="./img/placeholder.png" alt="">
-                </div>
-                <div class="orderInfo">
-                    <span class="orderStatus shipped">
-                        Entregado
-                    </span>
-                    <div class="productsList">
-                        <div class="productNameAndQuantity">
-                            <span class="productName">Perfume Chanel</span> <span class="productQuantity"> x 1</span> 
-                        </div>
-                        <div class="productNameAndQuantity">
-                            <span class="productName">Crema para las manos</span> <span class="productQuantity"> x 4</span>
-                        </div>
-                        <span class="productName"> y 3 más</span>
-                    </div>
-                    <span class="orderPrice"> $12.000 COP</span>
-                    
-
-                </div>
-                    <button class="btnDetails">Mas detalles</button>
-            </div>
-
-        </a>
-        <!--Fin de item de orden entregado-->
-
-        <!--Item de orden cancelado-->
-        <a href="#" class="orderItem">
-            <span class="orderDate"> cancelado el 12/12/12</span>
-            <div class="imgAndInfo">
-                <div class="imgBox">
-                    <img src="./img/placeholder.png" alt="">
-                </div>
-                <div class="orderInfo">
-                    <span class="orderStatus canceled">
-                        Cancelado
-                    </span>
-                    <div class="productsList">
-                        <div class="productNameAndQuantity">
-                            <span class="productName">Perfume Chanel</span> <span class="productQuantity"> x 1</span> 
-                        </div>
-                        <div class="productNameAndQuantity">
-                            <span class="productName">Crema para las manos</span> <span class="productQuantity"> x 4</span>
-                        </div>
-                        <span class="productName"> y 3 más</span>
-                    </div>
-                    <span class="orderPrice"> $12.000 COP</span>
-                    
-
-                </div>
-                    <button class="btnDetails">Mas detalles</button>
-            </div>
-
-        </a>
-        <!--Fin de item de orden pendiente-->
-
-    </div>
+    
+    
 </div>

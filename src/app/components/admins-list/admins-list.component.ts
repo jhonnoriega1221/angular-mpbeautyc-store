@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Admin } from 'src/app/interfaces/Admin';
 import { AdminService } from '../../services/admin.service';
 import { NavbarService } from '../../services/navbar.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-admins-list',
@@ -14,7 +16,8 @@ export class AdminsListComponent implements OnInit {
 
   constructor(
     private adminService:AdminService,
-    public nav:NavbarService
+    public nav:NavbarService,
+    private snackbar:MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +29,19 @@ export class AdminsListComponent implements OnInit {
       }
     )
     this.nav.show();
+  }
+
+  deleteAdmin(adminId:string){
+    this.adminService.deleteAdmin(adminId).subscribe(
+      res =>{
+        this.snackbar.open('Admin eliminado',null,{
+          duration: 3000,
+          verticalPosition:"bottom",
+          horizontalPosition:"end"
+        });
+        this.ngOnInit();
+      }
+    )
   }
 
 }

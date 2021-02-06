@@ -55,6 +55,8 @@ import { AdminClientsQuestionsComponent } from './components/admin-clients-quest
 import { AdminClientsOrderDetailsComponent } from './components/admin-clients-order-details/admin-clients-order-details.component';
 import { AdminClientsQuestionsDetailsComponent } from './components/admin-clients-questions-details/admin-clients-questions-details.component';
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
+import { AdminAdminAddComponent } from './components/admin-admin-add/admin-admin-add.component';
+import { AdminAdminDetailsComponent } from './components/admin-admin-details/admin-admin-details.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +85,9 @@ import { AdminSettingsComponent } from './components/admin-settings/admin-settin
     AdminClientsQuestionsComponent,
     AdminClientsOrderDetailsComponent,
     AdminClientsQuestionsDetailsComponent,
-    AdminSettingsComponent
+    AdminSettingsComponent,
+    AdminAdminAddComponent,
+    AdminAdminDetailsComponent
   ],
   imports: [
     BrowserModule,

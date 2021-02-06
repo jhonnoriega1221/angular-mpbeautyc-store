@@ -5,14 +5,15 @@
             <h2 mat-line><b>{{admin.adminName}}</b></h2>
             <span mat-line>{{admin.adminEmail}}</span>
             <div class="buttonRow">
-                <button mat-icon-button color="primary" aria-label="edit-icon">
+                <button class="actionButton" mat-icon-button color="primary" aria-label="edit-icon">
                     <mat-icon>edit</mat-icon>
                 </button>
-                <button mat-icon-button color="warn" aria-label="delete-icon">
-                    <mat-icon>delete</mat-icon>
+                <button class="actionButton" mat-icon-button color="warn" aria-label="delete-icon">
+                    <mat-icon (click)="deleteAdmin(admin._id)">delete</mat-icon>
                 </button>
             </div>
             <mat-divider></mat-divider>
         </mat-list-item>
     </mat-list>
+    <button class="addButton" mat-fab color="primary" aria-label="Botón de añadir" [routerLink]="['/admin/settings/admin_manager/add']"><mat-icon>add</mat-icon></button>
 </div>

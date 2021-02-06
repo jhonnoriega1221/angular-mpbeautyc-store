@@ -1,0 +1,21 @@
+<div class="adminContainer">
+	<form [formGroup]="adminForm" (ngSubmit)="registerAdmin()">
+        <mat-form-field class="productName" appearance="outline">
+            <mat-label>Correo</mat-label>
+            <input type="email" matInput formControlName="adminMail">
+        </mat-form-field>
+        <mat-form-field class="productName" appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput formControlName="adminPassword">
+        </mat-form-field>
+        <mat-form-field class="productName" appearance="outline">
+            <mat-label>Confirmar contraseña</mat-label>
+            <input type="password" matInput formControlName="adminConfirmPassword">
+        </mat-form-field>
+        <mat-form-field class="productName" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput formControlName="adminName">
+        </mat-form-field>
+        <button mat-raised-button color="primary">Registrar admin</button>
+	</form>
+</div>
