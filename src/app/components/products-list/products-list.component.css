@@ -1,0 +1,189 @@
+/*-------------Barra de busqueda------------------*/
+
+.searchBar{
+	padding-top: 20px;
+	display: none;
+}
+
+.search{
+    width: 100%;
+    border-radius: 5px 0px 0px 5px;
+    background-color: white;
+    border: 1px solid #eeeeee;
+    border-right: none;
+    outline:none;
+    transition: 0.2s;
+    padding-left: 8px;
+}
+
+.search:focus{
+    box-shadow: 0 0 10px #eeeeee;
+}
+
+.searchBtn{
+    border: 1px solid #eeeeee;
+    padding-top: 3px;
+    background: #ffffff;
+    border-radius: 0 5px 5px 0;
+}
+
+.noSearch{
+	margin:150px 0 100px 0;
+	text-align: center;
+	font-size: 24px;
+	font-weight: lighter;
+}
+
+.searchContainer{
+	display: flex;
+	margin: 30px 0;
+}
+
+/*--------Titulo y filtros---------*/
+
+/*Titulo*/
+.titleAndFilter{
+	display: block;
+	border-right: 1px solid #e6e6e6;
+	width: 200px;
+	min-width:200px;
+	padding-right: 20px;
+	margin-right: 20px;
+}
+
+.searchResultTitle{
+	margin-bottom: 15px;
+}
+
+.searchResultTitle span{
+	color: #b2b2b2;
+}
+
+
+
+.searchResultTitle h1{
+	font-weight: lighter;
+	margin:4px 0;
+}
+ 
+/*Filtros*/
+
+
+.filterSection label{
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.filterSection select{
+	margin-bottom: 5px;
+	width: 200px;
+	height: 40px;
+	border: 1px solid #e6e6e6;
+}
+
+.categoryFilter{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #e6e6e6;
+	margin-bottom: 10px;
+}
+
+/*----------------Resulta2--------------*/
+.resultSection{
+	display: block;
+	max-width: 1000px;
+	width:100%;
+	min-width: 300px;
+}
+
+.resultSectionItem{
+	display: flex;
+	border-bottom: 1px solid #e6e6e6;
+	margin: 5px 0;
+	padding: 5px 0;
+	text-decoration: none;
+	transition: 0.2s;
+	cursor:pointer;
+}
+
+.itemPrice{
+	color: #000;
+}
+
+.resultSectionItem:hover{
+	background-color: #fafafa;
+	
+}
+
+.itemImageBox img{
+	width: 100px;
+	margin-right: 10px;
+}
+
+.resultSectionItem h2{
+	margin:0 0 10px 0;
+	font-size: 18px;
+	font-weight: lighter;
+}
+
+.resultSectionItem span{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.resultSectionItem .itemDiscount{
+	color: #2bff39;
+	border-left: 1px solid #c6c6c6;
+	padding-left: 6px;
+}
+
+@media (max-width: 572px){
+
+
+	.searchContainer{
+		display: block;
+	}
+
+	.titleAndFilter{
+		border-right: 0px solid #e6e6e6;
+		border-bottom: 1px solid #e6e6e6;
+
+		width: 100%;
+		min-width:300px;
+		padding: 0 0 10px 0;
+		margin: 0 0 10px 0;
+	}
+
+	.filterSection{
+		display: flex;
+	}
+
+	.filterSection label{
+		display: block;
+		margin-bottom: 5px;
+		font-weight: bold;
+	}
+
+	.filterSection select{
+		width: 100%;
+	}
+
+	.categoryFilter{
+		border-bottom: 0px solid #b2b2b2;
+		width: 50%;
+		padding-bottom: 0px;
+		margin: 0 10px 0 0;
+	}
+
+	.brandFilter{
+		width: 50%;
+	}
+
+}
+
+@media(max-width: 560px){
+	.searchBar{
+		display: flex;
+	}
+	
+}

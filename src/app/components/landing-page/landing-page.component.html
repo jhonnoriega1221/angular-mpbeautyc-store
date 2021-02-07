@@ -47,7 +47,7 @@
     <div class="filaproductos">
         <div class="titulowrapper">
             <p>Nuevos productos</p>
-            <a href="#">ver todo ></a>
+            <a [routerLink]="['/products/new']">ver todo ></a>
         </div>
         <div class="wrapper">
             <!--Item de producto-->
@@ -121,7 +121,7 @@
     <div class="filaproductos2">
         <div class="titulowrapper">
             <p>En oferta</p>
-            <a href="#">ver todo ></a>
+            <a [routerLink]="['/products/discount']">ver todo ></a>
         </div>
         <div class="wrapper">
             <div *ngFor="let producto of productosOferta" class="productcard">
@@ -192,7 +192,7 @@
     <div class="filaproductos">
         <div class="titulowrapper">
             <p>Más vendidos</p>
-            <a href="#">ver todo ></a>
+            <a [routerLink]="['/products/mostselled']">ver todo ></a>
         </div>
         <div class="wrapper">
             <!--Item de producto-->

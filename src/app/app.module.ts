@@ -57,6 +57,13 @@ import { AdminClientsQuestionsDetailsComponent } from './components/admin-client
 import { AdminSettingsComponent } from './components/admin-settings/admin-settings.component';
 import { AdminAdminAddComponent } from './components/admin-admin-add/admin-admin-add.component';
 import { AdminAdminDetailsComponent } from './components/admin-admin-details/admin-admin-details.component';
+import { AdminSalesListComponent } from './components/admin-sales-list/admin-sales-list.component';
+import { AdminSalesDetailsComponent } from './components/admin-sales-details/admin-sales-details.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { CategoryPageComponent } from './components/category-page/category-page.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { Error404Component } from './components/error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +94,14 @@ import { AdminAdminDetailsComponent } from './components/admin-admin-details/adm
     AdminClientsQuestionsDetailsComponent,
     AdminSettingsComponent,
     AdminAdminAddComponent,
-    AdminAdminDetailsComponent
+    AdminAdminDetailsComponent,
+    AdminSalesListComponent,
+    AdminSalesDetailsComponent,
+    AboutPageComponent,
+    ContactPageComponent,
+    CategoryPageComponent,
+    ProductsListComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

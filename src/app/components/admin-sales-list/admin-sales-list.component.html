@@ -1,0 +1,25 @@
+<div class="adminContainer">
+	<mat-list *ngIf="ventas; else noVentas">
+    <!--Venta item-->
+        <mat-list-item [routerLink]="['/admin/ventas',pedido._id]" *ngFor="let venta of ventas" matRipple>
+             <mat-icon mat-list-icon>account_circle</mat-icon>
+             <h3 mat-line >{{venta.userData[0].name}} {{venta.userData[0].surname}} - {{venta.createdAt}}</h3>
+             <p mat-line>
+                 <span>	{{venta.products[0].productName}}</span>
+             </p>
+             <p *ngIf="venta.products.length > 1" mat-line>
+                 <span>	{{venta.products[1].productName}}</span>
+             </p>
+             <p *ngIf="venta.products.length > 2" mat-line>
+                <span>y {{venta.products.length-2}} más</span>
+            </p>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+        <!--Fin venta item-->
+    </mat-list>
+
+</div>
+
+<ng-template #noVentas>
+    <p>No hay ventas realizadas</p>
+</ng-template>

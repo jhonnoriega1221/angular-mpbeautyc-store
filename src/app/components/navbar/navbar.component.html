@@ -43,18 +43,18 @@
 <nav *ngIf="!nav.visible" class="navbar">
     <div class="linkspc">
         <a class="navlinkpc" [routerLink]="['/']">Inicio</a>
-        <a class="navlinkpc" href="#">Categorias</a>
-        <a class="navlinkpc" href="#">Historial</a>
-        <a class="navlinkpc" href="#">Nuevo</a>
-        <a class="navlinkpc" href="#">En oferta</a>
-        <a class="navlinkpc" href="#">Contacto</a>
-        <a class="navlinkpc" href="#">Acerca de</a>
+        <a class="navlinkpc" [routerLink]="['/categories']">Categorias</a>
+        <a class="navlinkpc" [routerLink]="['/profile/order']">Historial</a>
+        <a class="navlinkpc" [routerLink]="['/products/new']">Nuevo</a>
+        <a class="navlinkpc" [routerLink]="['/products/discount']">En oferta</a>
+        <a class="navlinkpc" [routerLink]="['/contact']">Contacto</a>
+        <a class="navlinkpc" [routerLink]="['/about']">Acerca de</a>
     </div>
     
     <a class="linkmobile" [routerLink]="['/']"><i class="material-icons nav_icon">home</i>
         <span class="nav_text">Inicio</span>
     </a>
-    <a class="linkmobile" href=""><i class="material-icons nav_icon">category</i>
+    <a class="linkmobile" [routerLink]="['/categories']"><i class="material-icons nav_icon">category</i>
         <span class="nav_text">Categorías</span>
     </a>
     <a class="linkmobile" [routerLink]="['/search']"><i class="material-icons nav_icon">search</i>

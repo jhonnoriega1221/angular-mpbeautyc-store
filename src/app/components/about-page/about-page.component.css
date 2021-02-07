@@ -1,0 +1,54 @@
+.aboutContainer{
+    padding-top: 120px;
+}
+
+h2{
+    margin-left: 100px;
+    font-size: 24px;
+    font-weight: lighter;
+}
+/*---ABOUT---------*/
+
+.aboutsection{
+    display: flex;
+    justify-content: center;
+
+}
+
+.about{
+    text-align: center;
+    padding: 10px 60px;
+    width: 200px;
+}
+
+.aboutimg{
+    width: 150px;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+@media (max-width: 635px){
+    .aboutsection{
+        display: block;
+    }
+
+    .about{
+        margin: 0 auto;
+    }
+    .aboutContainer{
+    padding-top: 70px;
+}
+
+h2{
+    margin-left: 10px;
+}
+}
+
+@media (max-width: 900px){
+    .about{
+        padding: 30px 30px;
+    }
+}

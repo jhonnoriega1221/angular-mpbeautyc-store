@@ -48,4 +48,8 @@ export class PedidoService {
   updatePedido(pedidoId:string){
     return this.http.put(this.URI+"pedido/"+pedidoId, null);
   }
+
+  getPedidosEntregados(){
+    return this.http.get<Pedido[]>(this.URI+"venta");
+  }
 }

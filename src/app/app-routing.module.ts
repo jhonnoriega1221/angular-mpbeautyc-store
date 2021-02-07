@@ -22,6 +22,12 @@ import { AdminSettingsComponent } from './components/admin-settings/admin-settin
 import { AdminsListComponent} from './components/admins-list/admins-list.component';
 import { AdminAdminAddComponent } from './components/admin-admin-add/admin-admin-add.component';
 import { AdminAdminDetailsComponent } from './components/admin-admin-details/admin-admin-details.component';
+import { AdminSalesListComponent } from './components/admin-sales-list/admin-sales-list.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
+import { ContactPageComponent } from './components/contact-page/contact-page.component';
+import { Error404Component } from './components/error404/error404.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { CategoryPageComponent } from './components/category-page/category-page.component';
 
 
 
@@ -38,6 +44,11 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductDetailsComponent},
   { path: 'search', component: SearchPageComponent},
   { path: 'search/:query', component: SearchPageComponent},
+  { path: 'products/:param', component: ProductsListComponent},
+  { path: 'categories', component: CategoryPageComponent },
+  { path: '404', component: Error404Component},
+  { path: 'contact', component: ContactPageComponent },
+  { path: 'about', component: AboutPageComponent },
   { path: 'signin', component: SigninComponent, canActivate: [NoAuthGuard]},
   { path: 'signup', component: SignupComponent, canActivate: [NoAuthGuard]},
   { path: 'profile', component: UserProfileComponent, canActivate: [AuthGuard]},
@@ -56,7 +67,10 @@ const routes: Routes = [
   { path: 'admin/settings', component: AdminSettingsComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/settings/admin_manager', component: AdminsListComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/settings/admin_manager/add', component: AdminAdminAddComponent, canActivate: [AuthAdminGuard]},
-  { path: 'admin/settings/admin_manager/:id', component: AdminAdminDetailsComponent, canActivate: [AuthAdminGuard]}
+  { path: 'admin/settings/admin_manager/:id', component: AdminAdminDetailsComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/sales', component: AdminSalesListComponent, canActivate: [AuthAdminGuard]},
+  { path: '**', redirectTo: '404', pathMatch:'full'}
+
 
 
 

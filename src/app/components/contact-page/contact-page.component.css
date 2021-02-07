@@ -1,0 +1,51 @@
+.contactContainer{
+	padding-top:120px;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+h2{
+	font-weight: lighter;
+	font-size: 24px;
+}
+
+.nameMail{
+	display: flex;
+}
+
+.formNombre{
+	width: 50%;
+	margin-right: 10px;
+}
+
+.formCorreo{
+	width: 50%;
+}
+
+.formMessage{
+	width: 100%;
+}
+
+textarea{
+	height: 200px;
+}
+
+.btnContact{
+    width: 250px;
+    display: block;
+    margin: 0 0 0 auto;
+    border-radius: 6px;
+    border: none;
+    background-color: #097CFF;
+    color: #fff;
+    font-size: 16px;
+    padding: 12px;
+    box-shadow: 0px 4px 12px #097CFF;
+    transition: 0.2s;
+    outline: none;
+}
+
+.btnContact:hover{
+    box-shadow: 0px 8px 20px #097CFF;
+    transition: 0.2s;
+}
