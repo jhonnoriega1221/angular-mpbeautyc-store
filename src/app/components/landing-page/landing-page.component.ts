@@ -33,8 +33,6 @@ export class LandingPageComponent implements OnInit {
         else
           this.productosNuevos = res;
 
-          console.log(this.productosNuevos);
-
       },
       err => {
         console.log(err);

@@ -1,1 +1,20 @@
-<p>admin-sales-details works!</p>
+<div class="adminContainer">
+    <div *ngIf="venta" class="subContainer">
+        <div class="imageAndName">
+            <mat-icon>account_circle</mat-icon>
+            <h3 class="name">{{venta.userData[0].name}} {{venta.userData[0].surname}} - {{venta.createdAt}}
+                <span class="subtitle">Detalles de la venta</span>
+            </h3>
+        </div>
+        <span class="spanText">Id de la venta</span>
+        <p>{{venta._id}}</p>
+        <span class="spanText">Ingresos obtenidos</span>
+        <p>${{venta.netTotal}} COP</p>
+        <h3><b>Productos vendidos</b></h3>
+        <p *ngFor="let producto of venta.products">
+            {{producto.productName}} - x{{producto.quantity}}
+            <mat-divider></mat-divider>
+        </p>
+
+    </div>
+</div>

@@ -23,6 +23,7 @@ import { AdminsListComponent} from './components/admins-list/admins-list.compone
 import { AdminAdminAddComponent } from './components/admin-admin-add/admin-admin-add.component';
 import { AdminAdminDetailsComponent } from './components/admin-admin-details/admin-admin-details.component';
 import { AdminSalesListComponent } from './components/admin-sales-list/admin-sales-list.component';
+import { AdminSalesDetailsComponent } from './components/admin-sales-details/admin-sales-details.component';
 import { AboutPageComponent } from './components/about-page/about-page.component';
 import { ContactPageComponent } from './components/contact-page/contact-page.component';
 import { Error404Component } from './components/error404/error404.component';
@@ -69,6 +70,7 @@ const routes: Routes = [
   { path: 'admin/settings/admin_manager/add', component: AdminAdminAddComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/settings/admin_manager/:id', component: AdminAdminDetailsComponent, canActivate: [AuthAdminGuard]},
   { path: 'admin/sales', component: AdminSalesListComponent, canActivate: [AuthAdminGuard]},
+  { path: 'admin/sales/:id', component: AdminSalesDetailsComponent, canActivate: [AuthAdminGuard]},
   { path: '**', redirectTo: '404', pathMatch:'full'}
 
 

@@ -25,7 +25,6 @@ pedidos:Pedido[];
     this.pedidoService.getPedidos().subscribe(
       res =>{
         this.pedidos = res;
-        console.log(this.pedidos)
       }, err => console.log(err)
     )
     this.nav.show();

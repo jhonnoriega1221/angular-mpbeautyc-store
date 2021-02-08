@@ -21,7 +21,6 @@ export class OrderListComponent implements OnInit {
     this.pedidoService.getPedidosUsuario().subscribe(
       res=>{
         this.pedidos = res;
-        console.log(this.pedidos);
       }
     )
   }

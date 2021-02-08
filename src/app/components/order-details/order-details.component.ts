@@ -25,7 +25,6 @@ export class OrderDetailsComponent implements OnInit {
       this.pedidoService.getPedido(this.id).subscribe(
         res =>{
           this.pedido=res;
-          console.log(this.pedido[0].status);
         }, err =>{
           console.log(err);
         }
