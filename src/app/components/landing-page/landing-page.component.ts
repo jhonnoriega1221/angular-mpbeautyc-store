@@ -26,7 +26,7 @@ export class LandingPageComponent implements OnInit {
 
     //ULTIMOS PRODUCTOS       
 
-    this.productoService.getProductos().subscribe(
+    this.productoService.getProductosDisponibles().subscribe(
       res => {
         if(res.length > 4)
           this.productosNuevos = res.splice(0,4);
@@ -40,7 +40,7 @@ export class LandingPageComponent implements OnInit {
     );
 
     //OFERTA
-    this.productoService.getProductos().subscribe(
+    this.productoService.getProductosDisponibles().subscribe(
       res => {
 
         res.sort((a,b) =>{
@@ -60,7 +60,7 @@ export class LandingPageComponent implements OnInit {
     );
 
     //MAS VENDI2
-    this.productoService.getProductos().subscribe(
+    this.productoService.getProductosDisponibles().subscribe(
       res => {
         res.sort(function(a,b){ return (b.soldTimes - a.soldTimes)});
 

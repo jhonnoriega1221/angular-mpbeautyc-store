@@ -21,6 +21,11 @@ export class ProductoService {
     return this.http.get<Producto[]>(this.URI + "producto");
   }
 
+  getProductosDisponibles(){
+    return this.http.get<Producto[]>(this.URI + "producto/status/available");
+  }
+
+
   getProducto(id:string){
       return this.http.get<Producto>(this.URI + "producto/" + id);
   }

@@ -17,7 +17,7 @@ productos:Producto[];
 	) { }
 
   ngOnInit(): void {
-  	this.productoService.getProductos().subscribe(
+  	this.productoService.getProductosDisponibles().subscribe(
   		res =>{
   			this.productos=res;
   		}
